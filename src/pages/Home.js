@@ -1,11 +1,12 @@
 import React from "react";
-
+import styles from "./Home.module.css";
 
 const Home = () => {
     return (
-        <div>
-            <h1>U&Me 인테리어 홈페이지가 만들어 지고 있습니다.</h1>
-            <p>테스트 브랜치 생성</p>
+        <div className={styles.visual_section}>
+            <div>
+                <img src="/images/pexels-fotoaibe-1571458.jpg" alt="메인이미지"/>
+            </div>
         </div>
     )
 }

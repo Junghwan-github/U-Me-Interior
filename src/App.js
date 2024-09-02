@@ -9,7 +9,7 @@ import './App.css';
 function App() {
 
   return (
-    <div className="uandme__">
+    <div className="uandme">
       <Router basename="/">
         <Header />
         <Routes> 
