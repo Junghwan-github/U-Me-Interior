@@ -1,0 +1,11 @@
+.nav_wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 35px;
+}
+
+.nav_wrapper > li > a {
+    
+    color: #222;
+    font-weight: 500;
+}

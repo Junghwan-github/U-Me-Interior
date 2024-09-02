@@ -1,8 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
 :root {
 
-  
+  /* 너비 */
+  --dp-dt-width: 1440px;
+  --dp-tb-width: 768px;
+  --dp-mb-width: 414px; 
+
+  /* 컬러 */
+
+  /* 기본여백 */
+  --base-padding: 20px;
+  --base-margin: 20px;
+
+  --ff-noto: "Noto Sans KR", sans-serif;
+  --ff-roboto: "Roboto", sans-serif;
 
 }
+
+/* css 초기화 */
 
 * {
 
@@ -12,5 +28,28 @@
 
 }
 
+html,
+body {
+  font-size: 16px;
+}
 
+body {
+  font-family: var(--ff-noto);
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+
+
+.uandme {
+  display: flex;
+  flex-direction: column;
+}
 
