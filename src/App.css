@@ -16,6 +16,9 @@
   --ff-noto: "Noto Sans KR", sans-serif;
   --ff-roboto: "Roboto", sans-serif;
 
+  /* 보더 */
+  --base-border: 1px solid #eee;
+  --divide-border: 1px solid #ddd;
 }
 
 /* css 초기화 */
