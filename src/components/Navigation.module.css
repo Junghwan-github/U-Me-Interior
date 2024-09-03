@@ -1,10 +1,15 @@
-.nav_wrapper {
+.menu_nav {
     display: flex;
     flex-direction: row;
     gap: 35px;
+    height: 35px;
+    align-items: center;
+    padding-right: var(--base-padding);
+    border-right: var(--divide-border);
 }
 
-.nav_wrapper > li > a {
+
+.menu_nav > li > a {
     
     color: #222;
     font-weight: 500;

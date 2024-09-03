@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const Navigation = ({ data }) => {
   return (
-    <ul className={styles.nav_wrapper}>
+    <ul className={styles.menu_nav}>
       {data.map((menu, index) => (
         <li key={index}>
           <Link to={menu.link}>{menu.item}</Link>
