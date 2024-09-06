@@ -8,6 +8,8 @@
   --dp-mb-width: 414px; 
 
   /* 컬러 */
+  --base-font-color: #222;
+  --base-theme-color: #fffbca;
 
   /* 기본여백 */
   --base-padding: 20px;
@@ -34,6 +36,7 @@
 html,
 body {
   font-size: 16px;
+  letter-spacing: -0.05rem;
 }
 
 body {

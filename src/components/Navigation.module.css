@@ -1,16 +1,37 @@
 .menu_nav {
     display: flex;
     flex-direction: row;
-    gap: 35px;
+    gap: 48px;
     height: 35px;
     align-items: center;
     padding-right: var(--base-padding);
-    border-right: var(--divide-border);
 }
 
 
+.menu_nav > li {
+    position: relative;
+}
+
 .menu_nav > li > a {
     
-    color: #222;
+    color: var(--base-font-color);
+    /* color: #fff; */
     font-weight: 500;
+    
+}
+
+.sub_nav {
+    box-sizing: content-box;
+    padding: 20px;
+    width: 100%;
+    background-color: #fff;
+    position: absolute;
+    top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.sub_nav > li {
+    margin: 5px 0;
 }
