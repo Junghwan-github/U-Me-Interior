@@ -1,7 +1,10 @@
 .section_slider {
   position: relative;
   width: 100%;
-  background: linear-gradient(140deg, #000000 0%, #ffffff 100%);
+  background: #bdc3c7;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
 }
 
 .section_slider .inner {
@@ -10,7 +13,7 @@
   width: var(--dp-dt-width);
 }
 
-.section_slider .inner_content {
+.section_slider .slogan_content {
   position: absolute;
   display: flex;
   flex-direction: row;
@@ -20,20 +23,22 @@
   z-index: 2;
 }
 
-.section_slider .inner_content > span {
+.section_slider .slogan_content > span {
   color: #fff;
   font-size: 3.5rem;
   font-weight: 800;
+  text-shadow: 0 0px 10px rgba(0, 0, 0, 0.5);
 }
 
 .section_slider .visual {
+  margin: 0 auto;
   position: relative;
-  width: 100%;
+  width: var(--dp-dt-width);
   height: calc(100vh - 90px);
   overflow: hidden;
 }
 
-.section_slider .visual::after {
+/* .section_slider::after {
   content: "";
   width: 100%;
   height: 100%;
@@ -43,7 +48,7 @@
   left: 0;
   z-index: 1;
   opacity: 0.2;
-}
+} */
 
 .section_slider .visual > img {
   width: 100%;
