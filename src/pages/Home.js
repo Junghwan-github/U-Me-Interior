@@ -1,27 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./Home.module.css";
+import Section from "../components/Section";
+import ContentTitle from "../components/ContentTitle";
 
 const Home = () => {
   return (
-    <div>
-      <section id="section_slider" className={styles.section_slider}>
+    <div className={styles.container}>
+      <Section attr={styles.slick}>
         <div className={styles.inner}>
-          <div className={styles.slogan_content}>
-            <span>
-              U&ME 인테리어<br></br> 최고의 퀄리티로 최저의 가격을 보장합니다.
-            </span>
+          <div className={styles.slogan}>
+            <span>U&ME 인테리어</span>
+            <span>최고의 퀄리티로 최저의 가격을 보장합니다.</span>
+          </div>
+          <div className={styles.visual}>
+            <img src="/images/test-main-images.png" alt="메인이미지" />
           </div>
         </div>
-        <div className={styles.visual}>
-          <img src="/images/test-main-images.png" alt="메인이미지" />
-        </div>
-      </section>
-      <section id="section_recent" className={styles.section_recent}>
+      </Section>
+      <Section attr={styles.recent}>
         <div className={styles.inner}>
-          <h2>인테리어 시공 사례</h2>
-          <span>아파트, 주택, 사무실 모든 인테리어 시공 사례</span>
+          <ContentTitle>
+            <h2>인테리어 시공 사례</h2>
+            <span>아파트, 주택, 사무실 모든 인테리어 시공 사례</span>
+          </ContentTitle>
         </div>
-      </section>
+      </Section>
     </div>
   );
 };

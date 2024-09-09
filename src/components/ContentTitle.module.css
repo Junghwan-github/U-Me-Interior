@@ -1,0 +1,16 @@
+.title {
+  margin: 0 auto;
+  width: var(--dp-dt-width);
+}
+
+.title h2 {
+  display: inline-block;
+  margin-right: 10px;
+  font-size: 1.6rem;
+  color: var(--base-font-color);
+}
+
+.title span {
+  display: inline-block;
+  color: var(--base-font-color);
+}
