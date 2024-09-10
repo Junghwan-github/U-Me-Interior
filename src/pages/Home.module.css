@@ -19,7 +19,7 @@
   z-index: 2;
 }
 
-.slick .slogan > span {
+.slogan_content {
   display: block;
   width: var(--dp-dt-width);
   margin: 0 auto;
@@ -28,7 +28,21 @@
   font-weight: 800;
   text-shadow: 0 0px 10px rgba(0, 0, 0, 0.5);
   opacity: 0;
-  transition: all 1.2s ease-in-out 0.8s;
+  transform: translateY(20px);
+  transition: all 0.5s;
+}
+
+.slogan_content.on {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.slogan_content.on:first-child {
+  transition: all 1.2s ease-in-out 0.5s;
+}
+
+.slogan_content.on:last-child {
+  transition: all 1.2s ease-in-out 1s;
 }
 
 .slick .visual {
