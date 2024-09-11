@@ -1,35 +1,20 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useRef } from "react";
 import styles from "./Home.module.css";
 import Section from "../components/Section";
 import ContentTitle from "../components/ContentTitle";
 import titleData from "../data/TitleAndDescription.json";
+import UseIntersectionObserver from "../components/UseIntersectionObserver";
 
 const Home = () => {
-  const [isDisplayOn, setIsDisplayOn] = useState(false);
+  const ref1 = useRef(null);
+  const ref2 = useRef(null);
+  const ref3 = useRef(null);
+
+  const isDisplayOn1 = UseIntersectionObserver(ref1);
+  const isDisplayOn2 = UseIntersectionObserver(ref2);
+  const isDisplayOn3 = UseIntersectionObserver(ref3);
 
   // 여러 요소를 담을 수 있는 배열 형태의 ref
-
-  const ref = useRef(null);
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-
-    // IntersectionObserver 설정
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setIsDisplayOn(true);
-          } else {
-            setIsDisplayOn(false);
-          }
-        });
-      },
-      { threshold: 0.5 } // 요소가 50% 이상 보일 때 트리거
-    );
-
-    observer.observe(ref.current);
-  }, []);
 
   const printTitle = (i, j, item) => {
     return titleData[i].home[j][item];
@@ -39,11 +24,11 @@ const Home = () => {
     <div className={styles.container}>
       <Section attr={styles.slick}>
         <div className={styles.inner}>
-          <div className={styles.slogan} >
+          <div className={styles.slogan}>
             <span
-            ref={ref}
+              ref={ref1}
               className={
-                isDisplayOn
+                isDisplayOn1
                   ? `${styles.slogan_content} ${styles.on}`
                   : styles.slogan_content
               }
@@ -51,9 +36,9 @@ const Home = () => {
               U&ME 인테리어
             </span>
             <span
-            ref={ref}
+              ref={ref2}
               className={
-                isDisplayOn
+                isDisplayOn2
                   ? `${styles.slogan_content} ${styles.on}`
                   : styles.slogan_content
               }
@@ -67,7 +52,10 @@ const Home = () => {
         </div>
       </Section>
       <Section attr={styles.recent}>
-        <div className={styles.inner}>
+        <div
+          ref={ref3}
+          className={isDisplayOn3 ? `${styles.inner} ${styles.on}` : styles.inner}
+        >
           <ContentTitle
             title={printTitle(0, 0, "title-1")}
             desc={printTitle(0, 0, "desc-1")}
