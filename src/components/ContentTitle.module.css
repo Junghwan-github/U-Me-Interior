@@ -6,8 +6,9 @@
 .title h2 {
   display: inline-block;
   margin-right: 10px;
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   color: var(--base-font-color);
+  font-weight: 600;
 }
 
 .title span {
