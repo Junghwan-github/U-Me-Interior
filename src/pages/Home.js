@@ -7,15 +7,18 @@ import UseIntersectionObserver from "../components/UseIntersectionObserver";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import ContentItems from "../components/ContentItems";
 
 const Home = () => {
   const ref1 = useRef(null);
   const ref2 = useRef(null);
   const ref3 = useRef(null);
+  const ref4 = useRef(null);
 
   const isDisplayOn1 = UseIntersectionObserver(ref1);
   const isDisplayOn2 = UseIntersectionObserver(ref2);
   const isDisplayOn3 = UseIntersectionObserver(ref3);
+  const isDisplayOn4 = UseIntersectionObserver(ref4);
 
   const settings = {
     dots: false,
@@ -84,60 +87,46 @@ const Home = () => {
           className={isDisplayOn3 ? `${styles.inner} ${styles.on}` : styles.inner}
         >
           <ContentTitle
-            title={printTitle(0, 0, "title-1")}
-            desc={printTitle(0, 0, "desc-1")}
+            title={printTitle(0, 0, "recent-title")}
+            desc={printTitle(0, 0, "recent-desc")}
+            link={printTitle(0, 0, "recent-link")}
           />
-
-          <div className={styles.item_inner}>
-            <div className={styles.item_box}>
-              <div className={styles.item_thumb}></div>
-              <div className={styles.item_content}>
-                <h4>테스트 동 테스트 아파트 48평형</h4>
-                <p className={styles.item_category}>
-                  <span>도배</span>
-                  <span>장판</span>
-                  <span>욕실</span>
-                  <span>타일</span>
-                  <span>싱크대</span>
-                </p>
-                <p className={styles.item_price}>
-                  <strong>3,000</strong>
-                  <span>만원</span>
-                </p>
+          <ContentItems />
+        </div>
+      </Section>
+      <Section attr={styles.quick}>
+        <div className={styles.inner}>
+          <div
+            ref={ref4}
+            className={
+              isDisplayOn4 ? `${styles.quick_list} ${styles.on}` : styles.quick_list
+            }
+          >
+            <div className={styles.quick_item}>
+              <div className={styles.quick_icon}>
+                <img src="/images/wireframe_17472634.png" alt="인테리어 가이드" />
+              </div>
+              <div className={styles.quick_content}>
+                <h5>인테리어 가이드</h5>
+                <p>인테리어 준비 부터 셀프 인테리어 꿀팁 공유!</p>
               </div>
             </div>
-            <div className={styles.item_box}>
-              <div className={styles.item_thumb}></div>
-              <div className={styles.item_content}>
-                <h4>테스트 동 테스트 아파트 48평형</h4>
-                <p className={styles.item_category}>
-                  <span>도배</span>
-                  <span>장판</span>
-                  <span>욕실</span>
-                  <span>타일</span>
-                  <span>싱크대</span>
-                </p>
-                <p className={styles.item_price}>
-                  <strong>3,000</strong>
-                  <span>만원</span>
-                </p>
+            <div className={styles.quick_item}>
+              <div className={styles.quick_icon}>
+              <img src="/images/home-sketch_17456351.png" alt="인테리어 견적문의" />
+              </div>
+              <div className={styles.quick_content}>
+                <h5>시공 견적 문의</h5>
+                <p>부담없이 카카오톡 채팅 문의가 가능해요!</p>
               </div>
             </div>
-            <div className={styles.item_box}>
-              <div className={styles.item_thumb}></div>
-              <div className={styles.item_content}>
-                <h4>테스트 동 테스트 아파트 48평형</h4>
-                <p className={styles.item_category}>
-                  <span>도배</span>
-                  <span>장판</span>
-                  <span>욕실</span>
-                  <span>타일</span>
-                  <span>싱크대</span>
-                </p>
-                <p className={styles.item_price}>
-                  <strong>3,000</strong>
-                  <span>만원</span>
-                </p>
+            <div className={styles.quick_item}>
+              <div className={styles.quick_icon}>
+              <img src="/images/house-moving_17456318.png" alt="인테리어 A/S신청" />
+              </div>
+              <div className={styles.quick_content}>
+                <h5>A/S 신청</h5>
+                <p>최대한 빨리 완벽하게 처리 해드릴께요!</p>
               </div>
             </div>
           </div>

@@ -2,8 +2,14 @@
   {
     "home": [
       {
-        "title-1": "인테리어 시공 사례",
-        "desc-1": "아파트, 주택, 사무실 모든 인테리어 시공 사례"
+        "recent-title": "인테리어 시공 사례",
+        "recent-desc": "아파트, 주택, 사무실 모든 인테리어 시공 사례",
+        "recent-link": "#"
+      },
+      {
+        "event-title": "이벤트",
+        "event-desc": "다양한 혜택을 받아가세요",
+        "event-link": "#"
       }
     ]
   }
