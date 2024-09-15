@@ -9,17 +9,6 @@ const Header = () => {
   return (
     <header className={styles.header}>
       <nav className={styles.gnb_nav}>
-        <div className={styles.members}>
-          <ul className={styles.members_nav}>
-            <li>
-              <Link to="/">로그인</Link>
-            </li>
-            <li>
-              <Link to="/">회원가입</Link>
-            </li>
-          </ul>
-        </div>
-        <div className={styles.menu}>
           <h1 className={styles.logo}>
             <Link to="/">
               <img src="/images/logo.png" alt="로고" />
@@ -27,7 +16,6 @@ const Header = () => {
           </h1>
           <Navigation data={GNBNavigation} />
           <IconNavigation />
-        </div>
       </nav>
     </header>
   );

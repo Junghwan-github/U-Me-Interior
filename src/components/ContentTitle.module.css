@@ -1,0 +1,33 @@
+.title {
+  margin: 0 auto;
+  width: var(--dp-dt-width);
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+}
+
+.title h2 {
+  margin-right: 10px;
+  font-size: 1.5rem;
+  color: var(--base-font-color);
+  font-weight: 600;
+}
+
+.title span {
+  color: var(--base-font-color);
+}
+
+.more {
+  margin-left: auto;
+}
+
+.more a {
+  display: flex;
+  color: var(--base-font-color);
+  flex-direction: row;
+  align-items: center;
+}
+
+.more a > svg {
+  margin-left: 5px;
+}
