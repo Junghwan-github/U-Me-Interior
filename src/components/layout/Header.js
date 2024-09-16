@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styles from "./Header.module.css";
-import Navigation from "../components/Navigation";
-import GNBNavigation from "../data/GNBNavigation.json";
-import IconNavigation from "../components/IconNavigation";
+import Navigation from "./Navigation";
+import GNBNavigation from "../../data/GNBNavigation.json";
+import IconNavigation from "./IconNavigation";
 
 const Header = () => {
   return (
