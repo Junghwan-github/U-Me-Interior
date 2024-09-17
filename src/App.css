@@ -10,6 +10,7 @@
   /* 컬러 */
   --base-font-color: #222;
   --base-theme-color: #fffbca;
+  --base-btn-color: rgb(17,110,219);
 
   /* 기본여백 */
   --base-padding: 20px;
@@ -52,7 +53,9 @@ a {
   text-decoration: none;
 }
 
-
+button {
+  cursor: pointer;
+}
 
 .uandme {
   display: flex;

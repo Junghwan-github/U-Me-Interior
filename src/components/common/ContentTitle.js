@@ -1,5 +1,5 @@
 import React from "react";
-import { BsArrowRight } from "react-icons/bs";
+import { BsChevronRight } from "react-icons/bs";
 import styles from "./ContentTitle.module.css";
 
 const ContentTitle = ({ title, desc, link }) => {
@@ -9,7 +9,7 @@ const ContentTitle = ({ title, desc, link }) => {
       <span>{desc}</span>
       <div className={styles.more}>
         <a href={link}>
-          더보기 <BsArrowRight />
+          더보기 <BsChevronRight />
         </a>
       </div>
     </div>

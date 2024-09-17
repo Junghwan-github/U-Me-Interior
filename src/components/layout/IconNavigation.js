@@ -9,7 +9,6 @@ const IconNavigation = () => {
     <ul className={styles.icon_navigation}>
       <li>
         <Link to="/">
-          {/* <span>전화상담</span> */}
           <RiCustomerServiceLine />
         </Link>
       </li>

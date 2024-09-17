@@ -22,12 +22,10 @@
 }
 
 .more a {
-  display: flex;
   color: var(--base-font-color);
-  flex-direction: row;
-  align-items: center;
+  
 }
 
 .more a > svg {
-  margin-left: 5px;
+  font-size: 0.79rem;
 }
