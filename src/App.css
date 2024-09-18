@@ -44,6 +44,22 @@ body {
   font-family: var(--ff-noto);
 }
 
+body::-webkit-scrollbar {
+  width: 5px;
+
+}
+
+
+body::-webkit-scrollbar-thumb {
+  background-color: #999;
+  border-radius: 10px;
+  border: 2px solid transparent;
+}
+
+body::-webkit-scrollbar-track {
+  background-color: #ffffff;
+}
+
 ul,
 ol {
   list-style: none;

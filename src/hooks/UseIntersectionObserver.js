@@ -10,7 +10,7 @@ const UseIntersectionObserver = (targetRef) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             setIsDisplayOn(true);
-          }
+          } 
         });
       };
 
