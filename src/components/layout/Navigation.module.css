@@ -2,7 +2,6 @@
     display: flex;
     flex-direction: row;
     gap: 48px;
-    height: 35px;
     align-items: center;
     padding-right: var(--base-padding);
 }
@@ -17,6 +16,11 @@
     color: var(--base-font-color);
     /* color: #fff; */
     font-weight: 500;
+    line-height: 90px;
+}
+
+.menu_nav.fixed li a {
+    line-height: 50px;
 }
 
 
@@ -26,8 +30,8 @@
     width: 130px;
     background-color: #fff;
     position: absolute;
-    top: calc(100% + 33px);
     display: flex;
+    top: 100%;
     flex-direction: column;
     justify-content: center;
     padding: 10px 0;

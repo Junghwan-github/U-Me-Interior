@@ -18,7 +18,7 @@ const FooterSubNavigation = () => {
           <Link to="#"><RiCustomerServiceLine /></Link>
         </div>
         <div className={styles.as_top}>
-          <a href="#header"><BsChevronUp /></a>
+          <a href="#header" ><BsChevronUp /></a>
         </div>
       </div>
     </div>

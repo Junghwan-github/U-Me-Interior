@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styles from "./Navigation.module.css";
 import { Link } from "react-router-dom";
 
-const Navigation = ({ data }) => {
+const Navigation = ({ data, isFixed }) => {
   const [activeIndex, setActiveIndex] = useState(null); 
   // 현재 호버된 메뉴 index
 
@@ -18,7 +18,7 @@ const Navigation = ({ data }) => {
 
 
   return (
-    <ul className={styles.menu_nav}>
+    <ul className={isFixed ? `${styles.menu_nav} ${styles.fixed}` : styles.menu_nav}>
       {data.map((menu, index) => (
         <li key={index} onMouseEnter={() => subMenuActive(index)}>
           <Link to={menu.link}>{menu.item}</Link>

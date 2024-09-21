@@ -7,6 +7,13 @@
     z-index: 99999;
 }
 
+.header.fixed {
+    position: fixed;
+    background-color: #fff;
+    border: 1px solid #eee;
+}
+
+
 .gnb_nav {
     width: var(--dp-dt-width);
     margin: 0 auto;
@@ -16,8 +23,8 @@
     justify-content: start;
    gap: 15px;
    /* border-bottom: 1px solid #eee; */
-   padding: 25px 0;
 }
+
 
 .logo {
     margin-right: 60px;
@@ -27,3 +34,6 @@
     max-width: 90px;
 }
 
+.header.fixed .logo a img {
+    max-width: 70px;
+}

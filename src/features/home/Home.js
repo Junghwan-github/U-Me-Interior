@@ -25,8 +25,6 @@ const Home = () => {
   const isDisplayOn4 = UseIntersectionObserver(ref4);
   const isDisplayOn5 = UseIntersectionObserver(ref5);
 
-
-
   const visaulSettings = {
     dots: false,
     fade: true,
@@ -39,10 +37,6 @@ const Home = () => {
     arrows: false,
     autoplaySpeed: 3000,
   };
-
-
-
-
 
   const resultTitle = (i, j, item) => {
     return titleData[i].home[j][item];

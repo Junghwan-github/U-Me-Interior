@@ -1,4 +1,4 @@
-import React, {useEffect, useRef, useState} from "react";
+import React, {useEffect, useState} from "react";
 import { Link } from "react-router-dom";
 import styles from "./Header.module.css";
 import Navigation from "./Navigation";
@@ -8,26 +8,37 @@ import IconNavigation from "./IconNavigation";
 
 const Header = () => {
 
-  const ref = useRef();
-  const [isVisible, IsSetVisible] = useState(false);
+  const [isFixed, setIsFixed] = useState(false);
 
   useEffect(() => {
 
-    if(ref.current) {
-      const offsetHeight = ref.current.offsetHeight;
-    }
+   const handleScroll = () => {
+      if(window.scrollY > 300) {
+        setIsFixed(true);
+      } else {
+        setIsFixed(false);
+      }
+  
+   }
+   window.addEventListener("scroll", handleScroll);
     
-  })
+   return () => {
+    window.removeEventListener("scroll", handleScroll);
+   };
+
+  }, [])
+
+  
 
   return (
-    <header ref={ref} id="header" className={styles.header}>
+    <header id="header" className={isFixed ? `${styles.header} ${styles.fixed}`: styles.header}>
       <nav className={styles.gnb_nav}>
           <h1 className={styles.logo}>
             <Link to="/">
               <img src="/images/logo.png" alt="로고" />
             </Link>
           </h1>
-          <Navigation data={GNBNavigation} />
+          <Navigation data={GNBNavigation} isFixed={isFixed} />
           <IconNavigation />
       </nav>
     </header>
