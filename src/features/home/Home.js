@@ -13,8 +13,7 @@ import Contents from "../../components/layout/Contents";
 import MainSlogan from "../../components/ui/MainSlogan";
 import ScrollDownIcon from "../../components/ui/ScrollDownIcon";
 import EventSlick from "../../components/ui/EventSlick";
-
-
+import BrandAboutItem from "../../components/ui/BrandAboutItem";
 
 const Home = () => {
   const ref3 = useRef(null);
@@ -105,6 +104,11 @@ const Home = () => {
           >
             <QuickListItem />
           </div>
+        </div>
+      </Section>
+      <Section attr={styles.brand}>
+        <div className={styles.inner}>
+            <BrandAboutItem />
         </div>
       </Section>
     </Contents>

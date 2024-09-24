@@ -61,6 +61,7 @@
 .event .inner {
   background-color: #fff;
   padding-bottom: 150px;
+  
 }
 
 .quick .inner {
@@ -84,8 +85,18 @@
   transition: all 1s ease-in-out;
 }  
 
+.about {
+  width: var(--dp-dt-width);
+  margin: 75px auto 0;
+}
 
-.inner {
+
+.brand .inner {
+  padding: 135px 0;
+}
+
+
+section .inner {
   width: 100%;
   padding: 75px 0;
 }

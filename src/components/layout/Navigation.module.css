@@ -19,7 +19,7 @@
     line-height: 90px;
 }
 
-.menu_nav.fixed li a {
+.menu_nav.fixed > li > a {
     line-height: 50px;
 }
 

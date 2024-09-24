@@ -27,5 +27,6 @@
 }
 
 .more a > svg {
+  padding-top: 1px;
   font-size: 0.79rem;
 }
