@@ -17,6 +17,7 @@
     /* color: #fff; */
     font-weight: 500;
     line-height: 90px;
+    font-size: 1.125rem;
 }
 
 .menu_nav.fixed > li > a {

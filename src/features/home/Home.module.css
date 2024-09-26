@@ -43,7 +43,7 @@
 
 .recent .inner {
   opacity: 0;
-  transform: translateY(20px);
+  transform: translateY(30px);
 }
 
 .recent .inner.on {
@@ -70,18 +70,18 @@
 }
 
 .quick_list {
+  margin: 0 auto;
+  transform: translateX(-30px);
   opacity: 0;
   width: var(--dp-dt-width);
-  margin: 0 auto;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  transform: translateY(20xp);
 }
 
 .quick_list.on {
+  transform: translateX(0);
   opacity: 1;
-  transform: translateY(0);
   transition: all 1s ease-in-out;
 }  
 

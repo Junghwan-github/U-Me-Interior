@@ -1,6 +1,6 @@
 import React from "react";
-import { BsChevronRight } from "react-icons/bs";
 import styles from "./ContentTitle.module.css";
+import IconRightArrow from '../ui/IconRightArrow';
 
 const ContentTitle = ({ title, desc, link }) => {
   return (
@@ -9,7 +9,7 @@ const ContentTitle = ({ title, desc, link }) => {
       <span>{desc}</span>
       <div className={styles.more}>
         <a href={link}>
-          더보기 <BsChevronRight />
+          더보기  <IconRightArrow direction={"right"}/>
         </a>
       </div>
     </div>

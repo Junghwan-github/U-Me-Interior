@@ -1,7 +1,7 @@
 [
   {
     "item": "시공사례",
-    "link": "/#",
+    "link": "/case",
     "list": [
       {
         "menu": "욕실",
@@ -43,7 +43,7 @@
   },
   {
     "item": "시공자재",
-    "link": "/#",
+    "link": "/materials",
     "list": [
       {
         "menu": "욕실",
@@ -85,14 +85,14 @@
   },
   {
     "item": "견적문의",
-    "link": "/#"
+    "link": "/estimate"
   },
   {
     "item": "인테리어 가이드",
-    "link": "/#"
+    "link": "/guid"
   },
   {
     "item": "회사소개",
-    "link": "/#"
+    "link": "/about"
   }
 ]

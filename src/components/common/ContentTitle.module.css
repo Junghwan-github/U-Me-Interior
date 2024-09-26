@@ -8,12 +8,13 @@
 
 .title h2 {
   margin-right: 10px;
-  font-size: 1.5rem;
+  font-size: 1.75rem;
   color: var(--base-font-color);
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .title span {
+  font-size: 1.125rem;
   color: var(--base-font-color);
 }
 
@@ -22,6 +23,7 @@
 }
 
 .more a {
+  font-size: 1.125rem;
   color: var(--base-font-color);
   
 }
