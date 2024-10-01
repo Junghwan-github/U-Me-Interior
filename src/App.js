@@ -8,21 +8,22 @@ import Materials from "./features/materials/Materials";
 import Estimate from "./features/estimate/Estimate";
 import Guid from "./features/guid/Guid";
 import About from "./features/about/About";
-import './App.css';
+import "./App.css";
 
 function App() {
-
   return (
     <div className="uandme">
       <Router basename="/">
         <Header />
-        <Routes> 
-          <Route path="/" element={<Home />} />  
+        <Routes>
+          <Route path="/" element={<Home />} />
           <Route path="/case" element={<Case />} />
-          <Route path="/materials" element={<Materials />} />  
-          <Route path="/estimate" element={<Estimate />} />  
-          <Route path="/guid" element={<Guid />} />  
-          <Route path="/about" element={<About />} />  
+          <Route path="/materials" element={<Materials />}>
+            <Route path=":subpath" element={<Materials />} />
+          </Route>
+          <Route path="/estimate" element={<Estimate />} />
+          <Route path="/guid" element={<Guid />} />
+          <Route path="/about" element={<About />} />
         </Routes>
         <Footer />
       </Router>

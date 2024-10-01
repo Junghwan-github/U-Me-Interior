@@ -1,10 +1,9 @@
 .header {
     position: relative;
     width: 100%;
-    /* padding: 25px 0; */
-    /* box-shadow: 0 0 10px 1px #eee;  */
-    /* border: 1px solid #eee; */
+    border: 1px solid #eee;
     z-index: 99999;
+
 }
 
 .header.fixed {
