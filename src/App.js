@@ -8,6 +8,7 @@ import Materials from "./features/materials/Materials";
 import Estimate from "./features/estimate/Estimate";
 import Guid from "./features/guid/Guid";
 import About from "./features/about/About";
+import CaseDetail from "./features/case/CaseDetail";
 import "./App.css";
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/case" element={<Case />} />
+          <Route path="/case/:id" element={<CaseDetail />} />
           <Route path="/materials" element={<Materials />}>
             <Route path=":subpath" element={<Materials />} />
           </Route>

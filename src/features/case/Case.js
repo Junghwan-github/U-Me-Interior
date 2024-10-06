@@ -3,7 +3,8 @@ import Contents from "../../components/layout/Contents";
 import Section from "../../components/layout/Section";
 import { Link } from "react-router-dom";
 import styles from "./Case.module.css";
-import { CiSearch } from "react-icons/ci";
+
+import BoardSearch from "../../components/ui/BoardSearch";
 
 const Case = () => {
   const [posts, setPosts] = useState([]);
@@ -35,7 +36,7 @@ const Case = () => {
       <ul className={styles.case_items}>
         {posts.map((post) => (
           <li key={post.id} className={styles.infinity_item}>
-            <Link to="#">
+            <Link to={`/case/${post.id}`}>
               <div className={styles.image_box}>
                 {/* 파일이 존재할 경우 썸네일 출력 */}
                 {post.files.length > 0 && (
@@ -46,8 +47,14 @@ const Case = () => {
                 )}
               </div>
               <h2 className={styles.title}>{post.title}</h2>
-              <p className={styles.category}>{post.category}</p>
-              <p className={styles.price}>{post.total}원</p>
+              <div className={styles.category_wrap}>
+                {post.category.map((item, index) => (
+                  <span key={index} className={styles.category}>
+                    {item}
+                  </span>
+                ))}
+              </div>
+              <p className={styles.price}>{Number(post.total.slice(0, -4)).toLocaleString()}<span>만원</span></p>
             </Link>
           </li>
         ))}
@@ -57,49 +64,10 @@ const Case = () => {
 
   return (
     <Contents>
-      <div className={styles.case_wrap}>
-        <Section attr={styles.keyword}>
-          <div className={styles.search}>
-            <ul>
-              <li className={styles.search_item}>
-                <div>
-                  <input
-                    type="text"
-                    className={styles.content_search}
-                    placeholder="키워드를 검색하세요"
-                  />
-                  <CiSearch />
-                </div>
-              </li>
-              <li>
-                키워드
-                <ul>
-                  <li>욕실</li>
-                  <li>싱크대</li>
-                  <li>타일</li>
-                  <li>창호</li>
-                  <li>조명</li>
-                  <li>도배</li>
-                  <li>장판</li>
-                  <li>마루</li>
-                  <li>시트</li>
-                </ul>
-              </li>
-              <li>
-                견적
-                <ul>
-                  <li>2,000만원 이하</li>
-                  <li>2,000만원 ~ 3,000만원</li>
-                  <li>3,000만원 ~ 5,000만원</li>
-                  <li>5,000만원 ~ 1억</li>
-                  <li>1억 이상</li>
-                </ul>
-              </li>
-            </ul>
-          </div>
-        </Section>
-        <Section attr={styles.content}>{renderContent()}</Section>
-      </div>
+      <Section attr={styles.case_wrap}>
+        <BoardSearch />
+        <div className={styles.content}>{renderContent()}</div>
+      </Section>
     </Contents>
   );
 };
