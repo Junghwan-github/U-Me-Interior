@@ -1,0 +1,36 @@
+i {
+  display: inline-block;
+  margin-left: 10px;
+}
+.left {
+}
+
+i span {
+  display: inline-block;
+}
+
+.right {
+}
+
+.right .parent {
+  position: relative;
+  width: 25px;
+  height: 1px;
+  background-color: #222;
+}
+
+.child {
+  position: absolute;
+  width: 10px;
+  height: 1px;
+  transform: rotate(45deg);
+  background-color: #222;
+  right: 0;
+  top: -4px;
+}
+
+.top {
+}
+
+.bottom {
+}

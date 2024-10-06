@@ -10,6 +10,7 @@
   /* 컬러 */
   --base-font-color: #222;
   --base-theme-color: #fffbca;
+  --base-btn-color: rgb(17,110,219);
 
   /* 기본여백 */
   --base-padding: 20px;
@@ -43,6 +44,22 @@ body {
   font-family: var(--ff-noto);
 }
 
+body::-webkit-scrollbar {
+  width: 5px;
+
+}
+
+
+body::-webkit-scrollbar-thumb {
+  background-color: #999;
+  border-radius: 10px;
+  border: 2px solid transparent;
+}
+
+body::-webkit-scrollbar-track {
+  background-color: #ffffff;
+}
+
 ul,
 ol {
   list-style: none;
@@ -52,7 +69,9 @@ a {
   text-decoration: none;
 }
 
-
+button {
+  cursor: pointer;
+}
 
 .uandme {
   display: flex;
@@ -62,3 +81,4 @@ a {
 section {
   width: 100%;
 }
+

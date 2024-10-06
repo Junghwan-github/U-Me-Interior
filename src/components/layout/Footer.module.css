@@ -1,0 +1,65 @@
+.footer {
+  position: relative;
+  width: 100%;
+  background-color: #fbfbfb;
+  border-top: 1px solid #eee;
+}
+
+.footer .inner {
+  margin: 0 auto;
+  padding: 75px 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: var(--dp-dt-width);
+
+}
+
+.footer .inner dt {
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #222;
+  font-size: 1.125rem;
+}
+
+.footer .inner p {
+  color: #222;
+  line-height: 1.7rem;
+}
+
+
+.footer .inner .copy {
+  margin-top: 20px;
+}
+
+.footer .inner .copy p span {
+  font-weight: 600;
+}
+
+.phone {
+  font-weight:700;
+}
+
+.contact_wrap dd span {
+  font-size: 0.8rem;
+  color: #222;
+}
+
+
+.info_wrap dd {
+  margin-bottom: 20px;
+}
+
+.info_wrap dd span {
+  font-size: 0.8rem;
+  color: #222;
+}
+
+.corp_wrap a{
+  margin-top: 10px;
+  display: inline-block;
+ color: #222;
+ padding: 5px;
+ border: 1px solid #222;
+ font-size: 0.8rem;
+}

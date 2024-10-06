@@ -1,0 +1,39 @@
+
+.quick_item {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: all 0.5s ease-in-out;
+  padding: 50px;
+}
+
+.quick_icon {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.quick_icon > img {
+  /* max-width: 200px; */
+  max-height: 150px;
+}
+
+.quick_content > h5 {
+  font-size: 1.375rem;
+  font-weight: 400;
+}
+.quick_item:nth-child(1) {
+  background-color: #FEFCF3;
+}
+.quick_item:nth-child(2) {
+  background-color: #F5EBE0;
+}
+.quick_item:nth-child(3) {
+  background-color: #F4DFD0;
+}
+
+.quick_item:hover {
+  flex: 2 1 auto;
+} 

@@ -1,0 +1,12 @@
+.inner {
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+  width: var(--dp-dt-width);
+  border: 1px solid red;
+  padding: 75px 0;
+}
+
+.inner div {
+  height: 500px;
+}

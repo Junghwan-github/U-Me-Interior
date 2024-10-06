@@ -1,0 +1,38 @@
+.container {
+  position: absolute;
+  top: -100px;
+  right: 50px;
+  z-index: 500;
+}
+
+.inner {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+}
+
+
+
+
+.contact a,
+.as_top a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  font-size: 1.8rem;
+  color: #222;
+  box-shadow: 0 0 10px 2px #00000015;
+}
+
+.contact a {
+  margin-bottom: 10px;
+  background-color: #fff4b8;
+}
+
+.as_top a {
+  background-color: #fff;
+}

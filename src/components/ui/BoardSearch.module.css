@@ -1,0 +1,94 @@
+.search {
+  padding-right: 30px;
+  border-right: 1px solid #eee;
+}
+
+.keyword, 
+.prices {
+  padding: 30px 0;
+  border-bottom: 1px solid #222;
+}
+
+.keyword > ul {
+  margin-top: 10px;
+  width: 200px;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.keyword > ul > li {
+  margin: 5px 10px 0 0;
+}
+
+
+.prices > ul {
+  margin-top: 10px;
+}
+
+.prices > ul > li {
+  margin: 5px 0;
+}
+
+.search > ul > li {
+  font-weight: 500;
+}
+
+.search > ul > li > ul > li {
+  font-weight: 400;
+  
+}
+
+.search_item div {
+  position: relative;
+ 
+}
+
+.search_item div svg {
+  position: absolute;
+  top: 50%;
+  right: 2%;
+  font-size: 1.6rem;
+  transform: translate(0, -50%);
+}
+
+.content_search {
+  border: none;
+  border-bottom: 1px solid #222;
+  width: 100%;
+  padding: 10px 15px;
+  font-size: 1rem;
+  font-family: var(--ff-noto);
+}
+
+.default_button {
+  font-family: var(--ff-noto);
+  background-color: transparent;
+  border: 1px solid #222;
+  border-radius: 30px;
+  padding: 5px 10px;
+  margin-top: 15px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  transition: all 0.3s ease-in-out;
+  color: #222;
+  font-size: 0.875rem;
+  font-weight: 400;
+}
+
+.default_button svg {
+  font-size: 1rem;
+  margin-left: 5px;
+  color: #222;
+  transition: all 0.3s ease-in-out;
+}
+
+.default_button:hover {
+  background-color: #222;
+  color: #fff;
+}
+
+.default_button:hover svg {
+  color: #fff;
+}
+
