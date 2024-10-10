@@ -1,8 +1,16 @@
+import Contents from "../../components/layout/Contents";
+import Section from "../../components/layout/Section";
+import styles from './About.module.css';
+
 const About = () => {
   return(
-    <div>
-      회사소개
-    </div>
+    <Contents>
+      <Section attr={styles.about}>
+        <div className={styles.inner}>
+
+        </div>
+      </Section>
+    </Contents>
   )
 
 }

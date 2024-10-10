@@ -10,6 +10,8 @@ const Case = () => {
   const [posts, setPosts] = useState([]);
   const path = "case";
 
+
+
   useEffect(() => {
     if (path) {
       // Fetch API로 커스텀 PHP API에서 게시판 데이터 가져오기
@@ -29,7 +31,6 @@ const Case = () => {
     }
   }, [path]); // subpath가 변경될 때마다 데이터를 다시 가져옴
 
-  console.log(posts);
 
   const renderContent = () => {
     return (

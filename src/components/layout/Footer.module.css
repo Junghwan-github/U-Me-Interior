@@ -55,6 +55,12 @@
   color: #222;
 }
 
+.corp_wrap {
+  padding: 0 150px;
+  border-left: 1px solid #00000015;
+  border-right: 1px solid #00000015;
+}
+
 .corp_wrap a{
   margin-top: 10px;
   display: inline-block;

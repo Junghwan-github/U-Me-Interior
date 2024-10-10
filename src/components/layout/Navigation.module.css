@@ -26,7 +26,7 @@
 }
 
 
-.menu_nav > li::before {
+/* .menu_nav > li::before {
     position: absolute;
     content: '';
     width: 100%;
@@ -44,7 +44,7 @@
    transform: translateX(0);
    opacity: 1;
    z-index: -1;
-}
+} */
 
 
 .sub_nav {
