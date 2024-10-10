@@ -15,7 +15,7 @@
 
 
 .contact a,
-.as_top a {
+.as_top button {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -26,6 +26,7 @@
   font-size: 1.8rem;
   color: #222;
   box-shadow: 0 0 10px 2px #00000015;
+  border: none;
 }
 
 .contact a {
@@ -33,6 +34,6 @@
   background-color: #fff4b8;
 }
 
-.as_top a {
+.as_top button {
   background-color: #fff;
 }

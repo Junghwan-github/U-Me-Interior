@@ -9,6 +9,12 @@ import { Link } from 'react-router-dom';
 
 const FooterSubNavigation = () => {
 
+  const topButton = () => {
+   window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+   });
+  };
 
 
   return (
@@ -18,7 +24,7 @@ const FooterSubNavigation = () => {
           <Link to="#"><RiCustomerServiceLine /></Link>
         </div>
         <div className={styles.as_top}>
-          <a href="#header" ><BsChevronUp /></a>
+          <button type="button" onClick={topButton}><BsChevronUp /></button>
         </div>
       </div>
     </div>
