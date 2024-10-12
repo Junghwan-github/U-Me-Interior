@@ -21,6 +21,15 @@
     padding: 10px;
 }
 
+.menu_nav > li > a:hover {
+    color: rgb(17,110,219);
+}
+
+.menu_nav > li > a:focus {
+    color: rgb(17,110,219);
+}
+
+
 .menu_nav.fixed > li > a {
     line-height: 50px;
 }
