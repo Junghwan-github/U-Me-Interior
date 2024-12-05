@@ -1,0 +1,30 @@
+.kakao_container {
+  width: var(--dp-dt-width);
+  margin: 0 auto;
+}
+
+.kakao_container .inner_card {
+  width: 50%;
+  padding: 35px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: #fffeee;
+}
+
+.kakao_container .inner_card button {
+  display: flex;
+  align-items: center;
+  padding: 10px 18px;
+  gap: 5px;
+  font-size: 1rem;
+  color: #333;
+  background-color: #FEE500;
+  border: none;
+  border-radius: 10px;
+  align-self: flex-end;
+}
+
+.kakao_container .inner_card button svg {
+  font-size: 1.5rem;
+}

@@ -1,0 +1,11 @@
+.slogan {
+  padding: 75px 0;
+}
+
+.estimate {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 0 75px;
+}

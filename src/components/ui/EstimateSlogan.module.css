@@ -1,0 +1,9 @@
+.slogan_container {
+  width: var(--dp-dt-width);
+  margin: 0 auto;
+}
+
+.slogan_container h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
