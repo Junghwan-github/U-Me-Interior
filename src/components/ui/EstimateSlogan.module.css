@@ -4,6 +4,13 @@
 }
 
 .slogan_container h3 {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 120%;
+  margin-bottom: 20px;
+}
+
+.slogan_container p {
   font-size: 1.25rem;
-  font-weight: 600;
+  line-height: 140%;
 }

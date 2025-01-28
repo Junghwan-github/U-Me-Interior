@@ -5,45 +5,7 @@
   },
   {
     "item": "시공자재",
-    "link": "/materials",
-    "list": [
-      {
-        "menu": "욕실",
-        "href": "/materials/bathroom"
-      },
-      {
-        "menu": "싱크대",
-        "href": "/materials/sink"
-      },
-      {
-        "menu": "타일",
-        "href": "/materials/tile"
-      },
-      {
-        "menu": "창호",
-        "href": "/materials/windows"
-      },
-      {
-        "menu": "조명",
-        "href": "/materials/lighting"
-      },
-      {
-        "menu": "도배",
-        "href": "/materials/paper"
-      },
-      {
-        "menu": "장판",
-        "href": "/materials/linoleum"
-      },
-      {
-        "menu": "마루",
-        "href": "/materials/floor"
-      },
-      {
-        "menu": "시트",
-        "href": "/materials/sheet"
-      }
-    ]
+    "link": "/materials"
   },
   {
     "item": "견적문의",
