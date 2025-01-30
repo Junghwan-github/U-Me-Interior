@@ -5,11 +5,13 @@ const EstimateForKakao = () => {
   return (
     <div className={styles.kakao_container}>
       <div className={styles.inner_card}>
+        <div>
         <p>부담없이 카카오 채팅으로 문의가 가능해요!</p>
         <button type="button">
           <RiKakaoTalkFill />
           카카오 채팅 문의
         </button>
+        </div>
       </div>
     </div>
   );
