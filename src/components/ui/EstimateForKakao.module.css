@@ -1,17 +1,105 @@
 .kakao_container {
- width: 100%;
- background-color: #fff460;
+  width: 100%;
+  background-color: var(--yellow-200);
 }
 
 .kakao_container .inner_card {
   width: var(--dp-dt-width);
   margin: 0 auto;
-  padding: 35px 0;
+  padding-top: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.text_content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
   gap: 10px;
 }
+
+.text_content > p {
+  text-align: center;
+  font-weight: 400;
+  color: #333;
+}
+
+.text_content > h2 {
+  word-spacing: 0.5rem;
+  font-size: 1.95rem;
+  font-weight: 700;
+  color: #333;
+}
+
+.visual_content {
+  flex: 1;
+}
+
+.button_wrapper {
+  display: flex;
+  gap: 10px;
+}
+
+
+.visual_content > .phone_back {
+  position: relative;
+  max-width: 350px;
+  height: 500px;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 30px 30px 0 0;
+  padding: 70px 30px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  font-size: 0.7rem;
+  overflow: hidden;
+}
+
+.visual_content > .phone_back::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 15px);
+  width: calc(100% - 25px);
+  height: 100%;
+  background-color: #f0f0f0;
+  border-radius: 20px 20px 0 0;
+}
+
+.content_bubble_left {
+  border-radius: 0px 10px 10px 10px;
+  padding: 10px;
+  box-shadow: 0px 0px 5px 0px #00000010;
+  background-color: #fff;
+  align-self: flex-start;
+  z-index: 22;
+}
+
+.content_bubble_right {
+  border-radius: 10px 0 10px 10px;
+  padding: 10px;
+  box-shadow: 0px 0px 5px 0px #00000010;
+  background-color: var(--yellow-200);
+  align-self: flex-end;
+  z-index: 22;
+}
+.content_bubble_right > div {
+  width: 180px;
+  height: 80px;
+  overflow: hidden;
+}
+.content_bubble_right > div img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: translate(-3px, 20px);
+  scale: 2;
+}
+
 
 .kakao_container .inner_card button {
   display: flex;
@@ -24,9 +112,11 @@
   background-color: #fff;
   border: none;
   border-radius: 10px;
-  align-self: flex-end;
 }
 
 .kakao_container .inner_card button svg {
+  font-size: 1.8rem;
+}
+.kakao_container .inner_card button:nth-child(2) svg {
   font-size: 1.5rem;
 }

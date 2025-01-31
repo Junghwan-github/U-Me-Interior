@@ -11,6 +11,13 @@
   --base-theme-color: #fffbca;
   --base-btn-color: #116edb;
 
+  --yellow-100: #FFFFCC;
+  --yellow-200: #FFF099;
+  --yellow-300: #FFE880;
+  --yellow-400: #FFD94D;
+  --yellow-500: #FFCA1A;
+  
+
   /* 기본여백 */
   --base-padding: 20px;
   --base-margin: 20px;
@@ -36,7 +43,7 @@
 html,
 body {
   font-size: 16px;
-  letter-spacing: -0.05rem;
+  letter-spacing: -0.053rem;
 }
 
 body {

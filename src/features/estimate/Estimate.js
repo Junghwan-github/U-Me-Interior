@@ -5,6 +5,8 @@ import EstimateForKakao from "../../components/ui/EstimateForKakao";
 import EstimateSlogan from "../../components/ui/EstimateSlogan";
 import EstimateForTel from "../../components/ui/EstimateForTel";
 import EstimateContent from "../../components/ui/EstimateContent";
+import EstimateProgress from "../../components/ui/EstimateProgress";
+import EstimateAbout from "../../components/ui/EstimateAbout";
 
 const Estimate = () => {
   return (
@@ -17,7 +19,12 @@ const Estimate = () => {
       </Section>
       <Section attr={styles.estimate}>
         <EstimateForKakao />
-        <EstimateForTel />
+      </Section>
+      <Section attr={styles.progress}>
+        <EstimateProgress />
+      </Section>
+      <Section attr={styles.about}>
+        <EstimateAbout />
       </Section>
     </Contents>
   );

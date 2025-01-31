@@ -1,66 +1,114 @@
-.about .inner {
-  width: 100%;
-  height: 470px;
-  background: linear-gradient(90deg, rgba(17,110,219,1) 0%, rgba(28,181,217,1) 100%);
-  padding: 75px 0;
-}
-
-.about .intro {
-  color: #fff;
-  margin: 0 auto;
-  width: var(--dp-dt-width);
-}
-
-.about .inner h1 {
-  font-size: 2rem;
-  font-weight: 600;
-}
-
-.about .inner p {
-  margin-top: 10px;
-}
-
-.intro span {
-  font-weight: 700;
-}
-
-.creed {
+.about_main {
   position: relative;
-  height: 300px;
 }
 
-.creed .inner {
-  width: var(--dp-dt-width);
-  left: 50%;
-  transform: translate(-50% , -45%);
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding: 30px 0;
-  gap: 30px;
+.inner_images {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  overflow: hidden;
+}
+
+.inner_images::before {
+  content: "";
   position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background-color: #00000090;
 }
 
-.creed .inner .card {
-  width: 33.3333%;
-  height: 405px;
-  backdrop-filter: blur(50px) ;
-  box-shadow: 2px 2px 10px 1px #00000015;
+.inner_images img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.inner_content {
+  position: absolute;
+  width: var(--dp-dt-width);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+  color: #fff;
+}
+
+.inner_content > h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 120%;
+  margin-bottom: 20px;
+}
+
+.inner_content > p {
+  font-size: 1.25rem;
+  line-height: 140%;
+  margin-bottom: 20px;
+}
+
+.map_container {
+  width: 100%;
+  padding: 100px 0;
+  overflow: hidden;
+}
+
+.map {
+  width: var(--dp-dt-width);
   border-radius: 20px;
-  padding: 30px;
+  overflow: hidden;
+  margin: 0 auto;
+  height: 500px;
+}
+
+.location_title {
+  width: var(--dp-dt-width);
+  margin: 0 auto 20px;
+  color: #333;
+}
+
+.location_title > h3 {
+  font-size: 1.85rem;
+}
+
+.location_title > p {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.address {
+  width: var(--dp-dt-width);
+  margin: 20px auto;
+  color: #333;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 30px;
-  color: #222;
+  gap: 5px;
 }
 
-.creed .inner .card .image {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  background-color: #eee;
+.address p {
+  display: flex;
+  gap: 5px;
 }
 
 
+.address p > span {
+  display: inline-block;
+  padding: 3px 9px;
+  font-size: 0.8rem;
+  color: #fff;
+  border-radius: 7px;
+}
 
+.address .blue {
+  background-color: blue;
+}
+
+.address .green {
+  background-color: green;
+}
+
+.address .red {
+  background-color: red;
+}

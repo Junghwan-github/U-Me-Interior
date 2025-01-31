@@ -9,3 +9,8 @@
   flex-direction: column;
   gap: 20px;
 }
+
+.progress {
+  width: var(--dp-dt-width);
+  margin: 0 auto;
+}
