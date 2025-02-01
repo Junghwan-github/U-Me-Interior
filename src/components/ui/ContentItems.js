@@ -5,9 +5,27 @@ import "slick-carousel/slick/slick-theme.css";
 import { Link } from "react-router-dom";
 import styles from "./ContentItems.module.css";
 import { MdKeyboardArrowRight, MdKeyboardArrowLeft } from "react-icons/md";
+import { PiX } from "react-icons/pi";
 
 const ContentItems = () => {
   const [posts, setPosts] = useState([]);
+  const [isMaxWidth, setIsMaxWidth] = useState(window.innerWidth <= 1248);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMaxWidth(window.innerWidth <= 1248);
+    };
+
+    window.addEventListener("resize", handleResize);
+    
+    // 초기 실행
+    handleResize();
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   const path = "case";
 
 
@@ -34,8 +52,10 @@ const ContentItems = () => {
     infinite: true,
     speed: 500,
     autoplay: true,
-    slidesToShow: 3,
-    slidesToScroll: 3,
+    slidesToShow: isMaxWidth ? 1 : 3,
+    slidesToScroll: isMaxWidth ? 1 : 3,
+    centerMode: false,
+    centerPadding: "10px",
     autoplaySpeed: 5000,
     nextArrow: <EventCustomNextArrow />,
     prevArrow: <EventCustomPrevArrow />,

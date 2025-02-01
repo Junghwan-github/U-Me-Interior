@@ -98,3 +98,10 @@
     height: 100%;
     color: var(--base-font-color);
 }
+
+
+@media screen and (max-width: 1248px) {
+    .menu_nav > li{
+        display: none;
+    }
+}

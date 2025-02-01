@@ -37,3 +37,13 @@
 .as_top button {
   background-color: #fff;
 }
+
+@media screen and (max-width: 1248px) {
+  .contact a,
+.as_top button {
+  width: 45px;
+  height: 45px;
+  font-size: 1.5rem;
+}
+
+}

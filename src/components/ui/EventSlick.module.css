@@ -89,3 +89,32 @@
 :global(.slick-active) div.event_slick_dot {
   background-color: var(--base-btn-color);
 }
+
+
+@media screen and (max-width: 1248px) {
+  .flex_box{
+    height: auto;
+    padding: 20px 20px;
+    flex-direction: column;
+  }
+
+  .item_images > img {
+    max-height: 150px;
+  }
+  .item_content {
+    padding: 20px 0;
+  }
+
+  .item_content h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+
+  .item_content p {
+    font-size: 0.88rem;
+  }
+
+  .item_content {
+    margin-left: 0px;
+  }
+}

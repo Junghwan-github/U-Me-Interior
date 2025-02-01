@@ -65,6 +65,48 @@ const About = () => {
           </div>
         </div>
       </Section>
+      <Section attr={styles.merit}>
+        <div className={styles.merit_container}>
+          <div className={styles.merit_inner_title}>
+            <h2>U&ME 인테리어 이야기.</h2>
+            <h3>
+              ARUM 키친하우스로 시작해 0000년부터 싱크대 전문 제작 및 시공 사업을
+              이어왔으며,
+              <br />
+              2024년, U&ME 인테리어로 새롭게 도약했습니다.
+            </h3>
+            <h3>대표 인사말</h3>
+            <p>
+              안녕하세요, U&ME 인테리어 대표 장세광입니다.
+              <br />
+              저희는 고객 한 분 한 분의 라이프스타일과 취향을 반영한 맞춤형 인테리어를
+              제공하기 위해 최선을 다하고 있습니다. 단순한 공간 시공을 넘어, 고객님께서
+              오랫동안 편안하고 만족스럽게 지낼 수 있는 공간을 만드는 것이 저희의
+              목표입니다.
+              <br />
+              <br />
+              오랜 경험과 노하우를 바탕으로, 특히 싱크대 제작 및 시공에 있어서 높은 품질과
+              정교한 기술력을 자랑하며, 자체 공장을 운영함으로써 타업체 대비 합리적인
+              가격과 뛰어난 품질을 동시에 제공합니다.
+              <br />
+              고객님께 최고의 만족을 드릴 수 있도록 늘 연구하고 발전하는 U&ME 인테리어가
+              되겠습니다.
+              <br />
+              <br />
+              감사합니다.
+            </p>
+            <p className={styles.ceo_name}><span>대표</span> 장세광</p>
+            <div className={styles.sekwang_sign}>
+              <img src="/images/sign.png" alt="sekwang-sign" />
+            </div>
+          </div>
+          <div className={styles.sekwang}>
+            <div className={styles.sekwang_images}>
+              <img src="/images/KakaoTalk_20250201_215611069.jpg" alt="sekwang" />
+            </div>
+          </div>
+        </div>
+      </Section>
       <Section attr={styles.location}>
         <div className={styles.map_container}>
           <div className={styles.location_title}>
@@ -77,7 +119,10 @@ const About = () => {
           <div className={styles.address}>
             <p>대구광역시 달서구 월배로 152 U&ME 인테리어.</p>
             <h4>대중교통 편</h4>
-            <p>지하철 <span className={styles.red}>1호선</span> 월배역 3번 출구 도보 3분 거리</p>
+            <p>
+              지하철 <span className={styles.red}>1호선</span> 월배역 3번 출구 도보 3분
+              거리
+            </p>
             <p>
               버스 <span className={styles.blue}>650</span>
               <span className={styles.blue}>651</span>

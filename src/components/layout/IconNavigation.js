@@ -7,12 +7,13 @@ import { Link } from "react-router-dom";
 const IconNavigation = () => {
   return (
     <ul className={styles.icon_navigation}>
-      <li>
-        <Link to="/">
+      <li className={styles.gnb_tel}>
+        <a href="tel:01045018729">
           <RiCustomerServiceLine />
-        </Link>
+          <span>010-4501-8729</span>
+        </a>
       </li>
-      <li>
+      <li className={styles.mobile_menu}>
         <Link to="/">
           <RxHamburgerMenu />
         </Link>

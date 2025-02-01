@@ -22,7 +22,6 @@
 .visual .slick {
   margin: 0 auto;
   position: relative;
-  /* width: var(--dp-dt-width); */
   width: 100%;
   height: calc(100vh - 90px);
   overflow: hidden;
@@ -103,4 +102,64 @@
 section .inner {
   width: 100%;
   padding: 75px 0;
+}
+
+@media screen and (max-width: 1248px) {
+  .recent {
+    width: 100%;
+    padding: 0 23px;
+    overflow: hidden;
+  }
+
+  .event {
+    padding: 0 23px;
+  }
+
+  .event_slick {
+    width: 100%;
+  }
+
+  .quick .inner {
+    padding: 23px 23px;
+  }
+  .quick_list {
+    width: 100%;
+    flex-direction: column;
+  }
+  .about {
+    width: 100%;
+  }
+
+  .brand {
+    padding: 0 23px;
+  }
+
+  .visual .slick{
+    height: calc(100vh - 70px);
+  }
+
+  .slick_box {
+    height: 100vh;
+  }
+
+  .visual .inner::after {
+    background: linear-gradient(
+    0deg,
+      rgba(34, 34, 34, 1) 0%,
+      rgba(255, 255, 255, 0) 50%,
+      rgb(34, 34, 34, 1) 100%
+    );
+  }
+
+  .brand .inner {
+    padding: 75px 0;
+  }
+
+  section .inner {
+    padding: 75px 0 0;
+  }
+
+  .event .inner {
+    padding-bottom: 150px;
+  }
 }

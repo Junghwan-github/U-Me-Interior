@@ -17,11 +17,12 @@ const FooterSubNavigation = () => {
   };
 
 
+
   return (
     <div className={styles.container}>
       <div className={styles.inner}>
         <div className={styles.contact}>
-          <Link to="#"><RiCustomerServiceLine /></Link>
+          <a href="/estimate"><RiCustomerServiceLine /></a>
         </div>
         <div className={styles.as_top}>
           <button type="button" onClick={topButton}><BsChevronUp /></button>

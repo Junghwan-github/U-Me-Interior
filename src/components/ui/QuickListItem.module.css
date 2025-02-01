@@ -6,6 +6,11 @@
   justify-content: center;
   transition: all 0.5s ease-in-out;
   padding: 50px;
+  color: #333;
+}
+
+.quick_item > a {
+  color: #333;
 }
 
 .quick_icon {
@@ -37,3 +42,24 @@
 .quick_item:hover {
   flex: 2 1 auto;
 } 
+
+@media screen and (max-width: 1248px) {
+
+  .quick_item {
+    align-items: center;
+    padding: 20px;
+  }
+  .quick_icon > img {
+    max-height: 100px;
+  }
+  .quick_content {
+    text-align: center;
+  }
+
+  .quick_content > h5 {
+    font-size: 1.2rem;
+  }
+  .quick_content > p {
+    font-size: 0.88rem;
+  }
+}

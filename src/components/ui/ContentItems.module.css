@@ -124,3 +124,43 @@
   font-size: 2rem;
   color: #222;
 }
+
+@media screen and (max-width: 1248px) {
+  .item_inner {
+    width: auto;
+  }
+
+  .item_slick_next {
+    display: none;
+  }
+
+  .item_slick_prev {
+    display: none;
+    left: -7px;
+  }
+
+  .infinity_item {
+    width: 100%;
+    padding: 0 5px;
+  }
+
+  .item_slick_next svg,
+  .item_slick_prev svg {
+    font-size: 1.5rem;
+  }
+
+  .title {
+    font-size: 1.1rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .category {
+    font-size: 0.8rem;
+  }
+
+  .price span {
+    font-size: 0.88rem;
+  }
+}

@@ -78,3 +78,44 @@
   height: 100%;
   object-fit: cover;
 }
+
+@media screen and (max-width: 1248px) {
+  .content {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .content > div {
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  .cover {
+    font-size: 1.1rem;
+  }
+  
+  .cover span {
+    font-size: 0.88rem;
+  }
+
+  .factory_item {
+    width: 100%;
+    max-height: 300px;
+  }
+
+  .content div h2 {
+    font-size: 1.3rem;
+  }
+
+  .content div p {
+    font-size: 0.88rem;
+  }
+  
+  .content div a {
+    font-size: 0.88rem;
+  }
+
+}
