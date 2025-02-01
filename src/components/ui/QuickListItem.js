@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styles from "./QuickListItem.module.css";
 
 const QuickListItem = () => {
@@ -31,19 +32,40 @@ const QuickListItem = () => {
 
   return (
     <>
-      {data.map((item, index) => (
-        <div key={index} className={styles.quick_item}>
-          <a href={item.href} target={item.target}>
-            <div className={styles.quick_icon}>
-              <img src={`images/${item.icon}`} alt={item.alt} />
-            </div>
-            <div className={styles.quick_content}>
-              <h5>{item.title}</h5>
-              <p>{item.desc}</p>
-            </div>
-          </a>
-        </div>
-      ))}
+      {data.map((item, index) => {
+        // href가 "http"로 시작하면 외부 링크로 간주
+        const isExternal = item.href.startsWith("http");
+
+        return (
+          <div key={index} className={styles.quick_item}>
+            {isExternal ? (
+              <a
+                href={item.href}
+                target={item.target}
+                rel="noopener noreferrer" // 보안 및 성능 향상
+              >
+                <div className={styles.quick_icon}>
+                  <img src={`images/${item.icon}`} alt={item.alt} />
+                </div>
+                <div className={styles.quick_content}>
+                  <h5>{item.title}</h5>
+                  <p>{item.desc}</p>
+                </div>
+              </a>
+            ) : (
+              <Link to={item.href} target={item.target}>
+                <div className={styles.quick_icon}>
+                  <img src={`images/${item.icon}`} alt={item.alt} />
+                </div>
+                <div className={styles.quick_content}>
+                  <h5>{item.title}</h5>
+                  <p>{item.desc}</p>
+                </div>
+              </Link>
+            )}
+          </div>
+        );
+      })}
     </>
   );
 };

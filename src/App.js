@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { HashRouter as Router, Route, Routes } from "react-router-dom";
 import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
 import Home from "./features/home/Home";
@@ -7,12 +7,14 @@ import Case from "./features/case/Case";
 import Estimate from "./features/estimate/Estimate";
 import About from "./features/about/About";
 import CaseDetail from "./features/case/CaseDetail";
+import ScrollToTop from "./hooks/ScrollToTop";
 import "./App.css";
 
 function App() {
   return (
     <div className="uandme">
       <Router basename="/">
+        <ScrollToTop />
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
