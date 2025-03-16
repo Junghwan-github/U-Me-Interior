@@ -48,3 +48,10 @@ opacity: 0.7;
   background-color: var(--yellow-200);
   border: none;
 }
+
+@media screen and (max-width: 1248px) {
+  .inner_images img {
+   height: 100%;
+   transform: translate(0, 0);
+  }
+}

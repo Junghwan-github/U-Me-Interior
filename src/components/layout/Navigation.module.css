@@ -101,7 +101,22 @@
 
 
 @media screen and (max-width: 1248px) {
-    .menu_nav > li{
+    .menu_nav {
         display: none;
+    }
+
+    .mobile_menu_nav {
+        display: flex;
+        flex-direction: column;
+        padding: 0 20px;
+    }
+
+    .mobile_menu_nav > li {
+        padding: 15px 20px;
+        border-bottom: 1px solid #eee;
+    }
+
+    .mobile_menu_nav > li > a {
+        color: #111;
     }
 }

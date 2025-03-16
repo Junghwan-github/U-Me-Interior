@@ -120,3 +120,11 @@
 .kakao_container .inner_card button:nth-child(2) svg {
   font-size: 1.5rem;
 }
+
+@media screen and (max-width: 1248px) {
+  .kakao_container .inner_card {
+    width: 100%;
+    flex-direction: column;
+    gap: 25px;
+  }
+}

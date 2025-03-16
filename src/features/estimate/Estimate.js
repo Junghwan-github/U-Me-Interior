@@ -14,9 +14,6 @@ const Estimate = () => {
       <Section attr={styles.slogan}>
         <EstimateSlogan />
       </Section>
-      <Section attr={styles.content}>
-        <EstimateContent />
-      </Section>
       <Section attr={styles.estimate}>
         <EstimateForKakao />
       </Section>

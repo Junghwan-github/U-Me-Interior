@@ -92,7 +92,6 @@
   gap: 5px;
 }
 
-
 .address p > span {
   display: inline-block;
   padding: 3px 9px;
@@ -131,7 +130,6 @@
 
 .merit_inner_title > h2 {
   font-size: 2rem;
-
 }
 
 .merit_inner_title > h3 {
@@ -142,7 +140,6 @@
 .merit_inner_title > p {
   font-size: 1.15rem;
 }
-
 
 .merit_container > .merit_inner_title {
   position: relative;
@@ -188,4 +185,99 @@
 .merit_inner_title > .sekwang_sign img {
   width: 100%;
   object-fit: cover;
+}
+
+@media screen and (max-width: 1248px) {
+  .inner_content {
+    width: 100%;
+  }
+
+  .merit_container {
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    padding: 70px 23px;
+    gap: 30px;
+  }
+
+  .inner_images {
+    height: 500px;
+  }
+
+  .inner_images img {
+    height: 100%;
+  }
+
+  .inner_content > h2 {
+    padding: 0 23px;
+    font-size: 2rem;
+  }
+
+  .inner_content > p {
+    font-size: 1.1rem;
+    padding: 0 23px;
+  }
+
+  .merit_inner_title > h2 {
+    font-size: 1.8rem;
+  }
+
+  .merit_inner_title > h3 {
+    font-size: 1.2rem;
+    margin: 15px 0;
+  }
+
+  .merit_inner_title > p {
+    font-size: 1.1rem;
+  }
+
+  .ceo_name > span {
+    font-weight: 500;
+  }
+
+  .merit_container > .sekwang {
+    width: 100%;
+    flex: 1;
+    position: relative;
+  }
+
+  .sekwang > .sekwang_images {
+    width: 100%;
+    height: 350px;
+    overflow: hidden;
+  }
+
+  .sekwang > .sekwang_images img {
+    width: 100%;
+    transform: translate(0, -100px);
+  }
+
+  .map_container {
+    padding: 0 23px;
+  }
+
+  .map {
+    width: 100%;
+    height: 300px;
+  }
+
+  .location_title > h3 {
+    font-size: 1.7rem;
+  }
+  
+  .location_title > p {
+    font-size: 0.9rem;
+  }
+
+  .address {
+    width: 100%;
+  }
+  
+  .address p {
+    font-size: 0.9rem;
+  }
+  
+  .address p > span {
+    font-size: 0.7rem;
+  }
 }

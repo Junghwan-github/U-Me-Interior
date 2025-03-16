@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styles from "./Navigation.module.css";
 import { Link } from "react-router-dom";
 
-const Navigation = ({ data, isFixed }) => {
+const Navigation = ({ data, isFixed, isActive, toggleHamburger }) => {
   const [activeIndex, setActiveIndex] = useState(null);
   // 현재 호버된 메뉴 index
 
@@ -17,43 +17,51 @@ const Navigation = ({ data, isFixed }) => {
   };
 
   return (
-    <ul className={isFixed ? `${styles.menu_nav} ${styles.fixed}` : styles.menu_nav}>
-      {data.map((menu, index) => (
-        <li key={index} onMouseEnter={() => subMenuActive(index)}>
-          {menu.link === "/materials" || menu.link === "/guid" ? (
-            menu.link === "/materials" ? (
-              <Link to="https://www.lxzin.com/zin/category/a070000" target="_blank">
-                {menu.item}
-              </Link>
+      <ul
+        className={
+          isActive
+            ? `${styles.mobile_menu_nav}`
+            : isFixed
+            ? `${styles.menu_nav} ${styles.fixed}`
+            : styles.menu_nav
+        }
+      >
+        {data.map((menu, index) => (
+          <li key={index} onMouseEnter={() => subMenuActive(index)}>
+            {menu.link === "/materials" || menu.link === "/guid" ? (
+              menu.link === "/materials" ? (
+                <Link to="https://www.lxzin.com/zin/category/a070000" onClick={toggleHamburger} target="_blank">
+                  {menu.item}
+                </Link>
+              ) : (
+                <Link to="https://www.lxzin.com/styling/trendship/" onClick={toggleHamburger} target="_blank">
+                  {menu.item}
+                </Link>
+              )
             ) : (
-              <Link to="https://www.lxzin.com/styling/trendship/" target="_blank">
-                {menu.item}
-              </Link>
-            )
-          ) : (
-            <Link to={menu.link}>{menu.item}</Link>
-          )}
+              <Link onClick={toggleHamburger} to={menu.link}>{menu.item}</Link>
+            )}
 
-          {menu.list && menu.list.length > 0 && (
-            <ul
-              className={
-                activeIndex === index
-                  ? `${styles.sub_nav} ${styles.active}`
-                  : styles.sub_nav
-              }
-              onMouseLeave={subMenuInactive}
-            >
-              <span>{menu.item}</span>
-              {menu.list.map((sub, index) => (
-                <li key={index}>
-                  <Link to={sub.href}>{sub.menu}</Link>
-                </li>
-              ))}
-            </ul>
-          )}
-        </li>
-      ))}
-    </ul>
+            {menu.list && menu.list.length > 0 && (
+              <ul
+                className={
+                  activeIndex === index
+                    ? `${styles.sub_nav} ${styles.active}`
+                    : styles.sub_nav
+                }
+                onMouseLeave={subMenuInactive}
+              >
+                <span>{menu.item}</span>
+                {menu.list.map((sub, index) => (
+                  <li key={index}>
+                    <Link to={sub.href}>{sub.menu}</Link>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </li>
+        ))}
+      </ul>
   );
 };
 

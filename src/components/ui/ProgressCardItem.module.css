@@ -17,3 +17,9 @@
 .desc p {
   font-size: 0.88rem;
 }
+
+@media screen and (max-width: 1248px) {
+  .card_item_container {
+    width: 100%;
+  }
+}

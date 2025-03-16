@@ -56,4 +56,10 @@
   .mobile_menu {
     display: block;
   }
+  .mobile_gnb_button {
+    background-color: transparent;
+    border: none;
+    font-size: 1.7rem;
+    padding-top: 5px;
+  }
 }

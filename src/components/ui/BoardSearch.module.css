@@ -1,6 +1,22 @@
 .search {
   padding-right: 30px;
   border-right: 1px solid #eee;
+  position: relative;
+}
+
+.search.fixed {
+  width: 275px;
+}
+
+.search_content.fixed {
+  position: fixed;
+  width: 200px;
+  top: 120px;
+  z-index: 99999;
+}
+
+.search_content {
+  bottom: 0px;
 }
 
 .keyword, 
@@ -18,6 +34,7 @@
 
 .keyword > ul > li {
   margin: 5px 10px 0 0;
+  cursor: pointer;
 }
 
 
@@ -27,6 +44,7 @@
 
 .prices > ul > li {
   margin: 5px 0;
+  cursor: pointer;
 }
 
 .search > ul > li {
