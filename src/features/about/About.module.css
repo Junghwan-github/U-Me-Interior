@@ -1,0 +1,283 @@
+.about_main {
+  position: relative;
+}
+
+.inner_images {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  overflow: hidden;
+}
+
+.inner_images::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background-color: #00000090;
+}
+
+.inner_images img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.inner_content {
+  position: absolute;
+  width: var(--dp-dt-width);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+  color: #fff;
+}
+
+.inner_content > h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 120%;
+  margin-bottom: 20px;
+}
+
+.inner_content > p {
+  font-size: 1.25rem;
+  line-height: 140%;
+  margin-bottom: 20px;
+}
+
+.map_container {
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 100px;
+}
+
+.map {
+  width: var(--dp-dt-width);
+  border-radius: 20px;
+  overflow: hidden;
+  margin: 0 auto;
+  height: 500px;
+}
+
+.location_title {
+  width: var(--dp-dt-width);
+  margin: 0 auto 20px;
+  color: #333;
+}
+
+.location_title > h3 {
+  font-size: 1.85rem;
+}
+
+.location_title > p {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.address {
+  width: var(--dp-dt-width);
+  margin: 20px auto;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.address p {
+  display: flex;
+  gap: 5px;
+}
+
+.address p > span {
+  display: inline-block;
+  padding: 3px 9px;
+  font-size: 0.8rem;
+  color: #fff;
+  border-radius: 7px;
+}
+
+.address .blue {
+  background-color: blue;
+}
+
+.address .green {
+  background-color: green;
+}
+
+.address .red {
+  background-color: red;
+}
+
+.merit_container {
+  width: var(--dp-dt-width);
+  margin: 0 auto;
+  padding: 100px 0;
+  color: #333;
+  display: flex;
+  justify-content: space-between;
+  gap: 0px;
+  height: 800px;
+  overflow: hidden;
+}
+
+.merit_inner_title {
+  color: #333;
+}
+
+.merit_inner_title > h2 {
+  font-size: 2rem;
+}
+
+.merit_inner_title > h3 {
+  font-size: 1.35rem;
+  margin: 15px 0;
+}
+
+.merit_inner_title > p {
+  font-size: 1.15rem;
+}
+
+.merit_container > .merit_inner_title {
+  position: relative;
+  flex: 1.1;
+  display: flex;
+  flex-direction: column;
+}
+
+.ceo_name {
+  font-weight: 700;
+  margin-top: auto;
+}
+
+.ceo_name > span {
+  font-weight: 500;
+}
+
+.merit_container > .sekwang {
+  flex: 1;
+  position: relative;
+}
+
+.sekwang > .sekwang_images {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.sekwang > .sekwang_images img {
+  width: 110%;
+  transform: translate(150px, -400px);
+  object-fit: cover;
+}
+
+.merit_inner_title > .sekwang_sign {
+  position: absolute;
+  bottom: 0px;
+  left: 39px;
+  width: 200px;
+  height: 50px;
+}
+
+.merit_inner_title > .sekwang_sign img {
+  width: 100%;
+  object-fit: cover;
+}
+
+@media screen and (max-width: 1248px) {
+  .inner_content {
+    width: 100%;
+  }
+
+  .merit_container {
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    padding: 70px 23px;
+    gap: 30px;
+  }
+
+  .inner_images {
+    height: 500px;
+  }
+
+  .inner_images img {
+    height: 100%;
+  }
+
+  .inner_content > h2 {
+    padding: 0 23px;
+    font-size: 2rem;
+  }
+
+  .inner_content > p {
+    font-size: 1.1rem;
+    padding: 0 23px;
+  }
+
+  .merit_inner_title > h2 {
+    font-size: 1.8rem;
+  }
+
+  .merit_inner_title > h3 {
+    font-size: 1.2rem;
+    margin: 15px 0;
+  }
+
+  .merit_inner_title > p {
+    font-size: 1.1rem;
+  }
+
+  .ceo_name > span {
+    font-weight: 500;
+  }
+
+  .merit_container > .sekwang {
+    width: 100%;
+    flex: 1;
+    position: relative;
+  }
+
+  .sekwang > .sekwang_images {
+    width: 100%;
+    height: 350px;
+    overflow: hidden;
+  }
+
+  .sekwang > .sekwang_images img {
+    width: 100%;
+    transform: translate(0, -100px);
+  }
+
+  .map_container {
+    padding: 0 23px;
+  }
+
+  .map {
+    width: 100%;
+    height: 300px;
+  }
+
+  .location_title > h3 {
+    font-size: 1.7rem;
+  }
+  
+  .location_title > p {
+    font-size: 0.9rem;
+  }
+
+  .address {
+    width: 100%;
+  }
+  
+  .address p {
+    font-size: 0.9rem;
+  }
+  
+  .address p > span {
+    font-size: 0.7rem;
+  }
+}

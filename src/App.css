@@ -4,13 +4,19 @@
 
   /* 너비 */
   --dp-dt-width: 1440px;
-  --dp-tb-width: 768px;
-  --dp-mb-width: 414px; 
+  --dp-mb-width: 1248px; 
 
   /* 컬러 */
   --base-font-color: #222;
   --base-theme-color: #fffbca;
-  --base-btn-color: rgb(17,110,219);
+  --base-btn-color: #116edb;
+
+  --yellow-100: #FFFFCC;
+  --yellow-200: #FFF099;
+  --yellow-300: #FFE880;
+  --yellow-400: #FFD94D;
+  --yellow-500: #FFCA1A;
+  
 
   /* 기본여백 */
   --base-padding: 20px;
@@ -37,7 +43,7 @@
 html,
 body {
   font-size: 16px;
-  letter-spacing: -0.05rem;
+  letter-spacing: -0.053rem;
 }
 
 body {
@@ -46,7 +52,6 @@ body {
 
 body::-webkit-scrollbar {
   width: 5px;
-
 }
 
 

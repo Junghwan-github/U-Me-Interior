@@ -4,7 +4,7 @@ import Section from "../../components/layout/Section";
 import ContentTitle from "../../components/common/ContentTitle";
 import titleData from "../../data/TitleAndDescription.json";
 import UseIntersectionObserver from "../../hooks/UseIntersectionObserver";
-import Slider from "react-slick";
+import Slider from "react-slick/lib/slider";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import ContentItems from "../../components/ui/ContentItems";
@@ -40,6 +40,8 @@ const Home = () => {
   const resultTitle = (i, j, item) => {
     return titleData[i].home[j][item];
   };
+
+
 
   return (
     <Contents>

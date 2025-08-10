@@ -1,47 +1,67 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import Contents from "../../components/layout/Contents";
 import Section from "../../components/layout/Section";
 import { Link } from "react-router-dom";
 import styles from "./Case.module.css";
-
 import BoardSearch from "../../components/ui/BoardSearch";
+import { IoIosArrowDown } from "react-icons/io";
 
 const Case = () => {
   const [posts, setPosts] = useState([]);
+  const [searchSubject, setSearchSubject] = useState("");
+  const [searchKeyword, setSearchKeyword] = useState("");
+  const [searchPrice, setSearchPrice] = useState("");
+  const [isFetching, setIsFetching] = useState(false);
   const path = "case";
 
+  // ✅ 검색 기능을 위한 API 호출 함수
+  const fetchPosts = useCallback(() => {
+    setIsFetching(true);
+
+    let url = `https://uandme.kr/gb5/search_board_posts.php?bo_table=${path}`;
+
+    if (searchSubject) url += `&query=${encodeURIComponent(searchSubject)}`;
+    if (searchKeyword) url += `&category=${encodeURIComponent(searchKeyword)}`;
+    if (searchPrice) url += `&price=${searchPrice}`;
+
+    console.log("API 호출됨:", url); // ✅ API 호출 로그 확인
+
+    fetch(url)
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.status === "success") {
+          setPosts(data.data || []);
+        }
+      })
+      .catch((error) => console.error("Error fetching data:", error))
+      .finally(() => setIsFetching(false));
+  }, [path, searchSubject, searchKeyword, searchPrice]);
+
+  // ✅ 검색 조건이 변경될 때마다 API 호출
   useEffect(() => {
-    if (path) {
-      // Fetch API로 커스텀 PHP API에서 게시판 데이터 가져오기
-      fetch(`https://uandme.kr/gb5/get_board_posts.php?bo_table=${path}`)
-        .then((response) => {
-          if (!response.ok) {
-            throw new Error("Network response was not ok");
-          }
-          return response.json(); // JSON 형식으로 변환
-        })
-        .then((data) => {
-          setPosts(data); // 가져온 데이터를 상태에 저장
-        })
-        .catch((error) => {
-          console.error("Error fetching data:", error);
-        });
-    }
-  }, [path]); // subpath가 변경될 때마다 데이터를 다시 가져옴
+    fetchPosts();
+  }, [fetchPosts]);
 
-  console.log(posts);
+  const extractUniqueKeywords = () => {
+    const keywordsSet = new Set();
+    posts.forEach((post) => {
+      if (post.category) {
+        post.category.forEach((cat) => keywordsSet.add(cat.trim()));
+      }
+    });
+    return Array.from(keywordsSet);
+  };
 
-  const renderContent = () => {
-    return (
+  const renderContent = () => (
+    <>
       <ul className={styles.case_items}>
         {posts.map((post) => (
           <li key={post.id} className={styles.infinity_item}>
             <Link to={`/case/${post.id}`}>
               <div className={styles.image_box}>
-                {/* 파일이 존재할 경우 썸네일 출력 */}
                 {post.files.length > 0 && (
                   <img
-                    src={`https://uandme.kr/gb5${post.files[0].file_url}`} // 첫 번째 파일을 썸네일로 사용
+                    src={`https://uandme.kr/gb5${post.files[0].file_url}`}
                     alt={post.files[0].original_name}
                   />
                 )}
@@ -54,18 +74,44 @@ const Case = () => {
                   </span>
                 ))}
               </div>
-              <p className={styles.price}>{Number(post.total.slice(0, -4)).toLocaleString()}<span>만원</span></p>
+              <p className={styles.price}>
+                {Number(post.total.slice(0, -4)).toLocaleString()}
+                <span>만원</span>
+              </p>
             </Link>
           </li>
         ))}
       </ul>
-    );
-  };
+      <button type="button" className={styles.next_page}>
+        더보기 <IoIosArrowDown />
+      </button>
+    </>
+  );
 
   return (
     <Contents>
       <Section attr={styles.case_wrap}>
-        <BoardSearch />
+        <BoardSearch
+          keywords={extractUniqueKeywords()}
+          onSearch={(query) => {
+            console.log("검색 실행:", query);
+            setSearchSubject(query);
+          }}
+          onKeywordClick={(keyword) => {
+            console.log("키워드 검색 실행:", keyword);
+            setSearchKeyword(keyword);
+          }}
+          onPriceClick={(price) => {
+            console.log("가격 필터 실행:", price);
+            setSearchPrice(price);
+          }}
+          onReset={() => {
+            console.log("검색 초기화 실행");
+            setSearchSubject("");
+            setSearchKeyword("");
+            setSearchPrice("");
+          }}
+        />
         <div className={styles.content}>{renderContent()}</div>
       </Section>
     </Contents>

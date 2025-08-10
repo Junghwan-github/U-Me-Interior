@@ -26,7 +26,7 @@ const Footer = () => {
             <dt>U&ME 인테리어</dt>
             <dd>
               <p>대구광역시 달서구 월배로 152 U&ME 인테리어. │ 대표이사 : 장세광</p>
-              <p>연락처 : 010-4434-8729 │ 이메일 : jsk830@naver.com</p>
+              <p>연락처 : 010-4501-8729 │ 이메일 : jsk830@naver.com</p>
               <a href="https://uandme.kr/gb5/adm/" target="_blank">관리자 로그인</a>
             </dd>
             <dd className={styles.copy}>
@@ -43,7 +43,7 @@ const Footer = () => {
           <dl>
             <dt>고객센터</dt>
             <dd>
-              <p className={styles.phone}>전화번호 : 010-4434-8729</p>
+              <p className={styles.phone}>전화번호 : 010-4501-8729</p>
               <p>운영시간 : 09:00 ~ 18:00</p>
               <p>토요일 : 10:00 ~ 15:00</p>
               <span>일요일, 공휴일은 휴무입니다.</span>

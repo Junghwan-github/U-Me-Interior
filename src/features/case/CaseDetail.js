@@ -3,19 +3,19 @@ import styles from "./CaseDetail.module.css";
 import { useParams } from "react-router-dom";
 import Contents from "../../components/layout/Contents";
 import Section from "../../components/layout/Section";
+import { AiOutlineInfoCircle } from "react-icons/ai";
 
 const CaseDetail = () => {
-  const { id } = useParams(); // URL에서 id 값을 가져옴
-  const [post, setPost] = useState(null); // 게시글 데이터를 저장할 상태
+  const { id } = useParams(); 
+  const [post, setPost] = useState(null); 
 
   useEffect(() => {
-    // Fetch API로 id에 해당하는 게시글 상세 정보를 가져옴
     fetch(`https://uandme.kr/gb5/get_board_detail.php?id=${id}&bo_table=case`)
       .then((response) => {
         if (!response.ok) {
           throw new Error("Network response was not ok");
         }
-        return response.json(); // JSON 형식으로 변환
+        return response.json(); 
       })
       .then((data) => {
         setPost(data); // 가져온 데이터를 상태에 저장
@@ -23,7 +23,7 @@ const CaseDetail = () => {
       .catch((error) => {
         console.error("Error fetching data:", error);
       });
-  }, [id]); // id가 변경될 때마다 데이터를 다시 가져옴
+  }, [id]);
 
   console.log(post);
 
@@ -37,16 +37,7 @@ const CaseDetail = () => {
         <div className={styles.bar}></div>
       </Section>
       <Section attr={styles.contents}>
-
         <div className={styles.content_wrap}>
-        <div className={styles.thumbnail}>
-            {post.files.length > 0 && (
-              <img
-                src={`https://uandme.kr/gb5${post.files[0].file_url}`} // 첫 번째 파일을 썸네일로 사용
-                alt={post.files[0].original_name}
-              />
-            )}
-          </div>
           <h1 className={styles.title}>{post.title}</h1>
           <div className={styles.category}>
             {post.category.map((item, index) => (
@@ -55,19 +46,32 @@ const CaseDetail = () => {
               </span>
             ))}
           </div>
- 
+
           <div className={styles.price}>
-            <h2>U&ME 인테리어 견적서</h2>
+            <div className={styles.price_header}>
+              <h2>인테리어 견적서</h2>
+              <div>
+                <span>
+                  시공일 <br />
+                <strong>{post.start}</strong>
+                </span>
+                <span>
+                  기간
+                  <br />
+                  <strong>{post.period} 일</strong>
+                </span>
+              </div>
+            </div>
             <ul>
               {post.wr_fields.map((priceItem, index) => {
                 return (
                   priceItem.value > 0 && (
                     <li key={index}>
-                      <p className={styles.price_title}>
-                        {priceItem.wr}
-                        <span>{priceItem.content}</span>
-                      </p>
-                      <span>{Number(priceItem.value).toLocaleString()} 원</span>
+                      <div>
+                        <p className={styles.price_title}>{priceItem.wr}</p>
+                        <span>{Number(priceItem.value).toLocaleString()} 원</span>
+                      </div>
+                      <span className={styles.price_desc}>{priceItem.content}</span>
                     </li>
                   )
                 );
@@ -79,8 +83,28 @@ const CaseDetail = () => {
                 {Number(post.total).toLocaleString()} <span>원</span>
               </span>
             </div>
+            <div className={styles.info}>
+              <h3>
+                <AiOutlineInfoCircle /> 꼭 읽어주세요!
+              </h3>
+              <ul>
+                <li>견적서는 참고만 하시길 바랍니다. </li>
+                <li>실제 견적과는 차이가 있을수있습니다.</li>
+                <li>견적서의 모든 금액은 부가세(VAT)가 포함되어 있지 않습니다.</li>
+              </ul>
+            </div>
           </div>
-          <div className={styles.info}></div>
+          <div className={styles.detail_info}>
+          <span>Detailed information</span><p>시공 상세 정보</p>
+          </div>
+          <div className={styles.thumbnail}>
+            {post.files.length > 0 && (
+              <img
+                src={`https://uandme.kr/gb5${post.files[0].file_url}`} // 첫 번째 파일을 썸네일로 사용
+                alt={post.files[0].original_name}
+              />
+            )}
+          </div>
           <div
             className={styles.content}
             dangerouslySetInnerHTML={{ __html: post.content }}

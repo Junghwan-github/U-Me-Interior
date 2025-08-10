@@ -1,0 +1,31 @@
+.slogan_container {
+  width: var(--dp-dt-width);
+  margin: 0 auto;
+}
+
+.slogan_container h3 {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 120%;
+  margin-bottom: 20px;
+}
+
+.slogan_container p {
+  font-size: 1.25rem;
+  line-height: 140%;
+}
+
+@media screen and (max-width: 1248px) {
+  .slogan_container {
+    width: 100%;
+    padding: 0 23px;
+  }
+
+  .slogan_container h3 {
+    font-size: 2rem;
+  }
+
+  .slogan_container p {
+    font-size: 1.1rem;
+  }
+}

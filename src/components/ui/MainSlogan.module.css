@@ -39,3 +39,16 @@
 .slogan_content.on:last-child {
   transition: all 1.2s ease-in-out 1s;
 }
+
+@media screen and (max-width: 1248px) {
+  .slogan_content {
+    width: 100%;
+    font-size: 2rem;
+    padding: 0 23px;
+  }
+
+  .slogan_content:last-child {
+    font-size: 1.1rem;
+    font-weight: 500;
+  }
+}

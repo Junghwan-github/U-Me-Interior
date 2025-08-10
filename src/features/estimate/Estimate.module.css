@@ -1,0 +1,22 @@
+.slogan {
+  padding: 75px 0;
+}
+
+.estimate {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.progress {
+  width: var(--dp-dt-width);
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 1248px) {
+  .progress {
+    width: 100%;
+  }
+}
