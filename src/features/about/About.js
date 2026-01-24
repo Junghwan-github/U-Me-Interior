@@ -36,18 +36,20 @@ const About = () => {
           yAnchor: 2.5, // 마커 위쪽에 텍스트가 뜨도록 설정
         });
 
+         console.log(marker);
         // 오버레이 지도에 추가
         customOverlay.setMap(map);
       });
     };
   }, []);
 
+ 
   return (
     <Contents>
       <Section attr={styles.about}>
         <div className={styles.about_main}>
           <div className={styles.inner_images}>
-            <img src="/images/factory.png" />
+            <img src="/images/factory.png" alt="유엔미 인테리어 공장 전면" />
           </div>
           <div className={styles.inner_content}>
             <p>U&ME 인테리어</p>

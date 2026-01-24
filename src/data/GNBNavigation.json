@@ -4,16 +4,8 @@
     "link": "/case"
   },
   {
-    "item": "시공자재",
-    "link": "/materials"
-  },
-  {
     "item": "견적문의",
     "link": "/estimate"
-  },
-  {
-    "item": "인테리어 가이드",
-    "link": "/guid"
   },
   {
     "item": "회사소개",

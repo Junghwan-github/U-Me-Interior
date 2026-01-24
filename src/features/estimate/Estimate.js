@@ -3,8 +3,6 @@ import Section from "../../components/layout/Section";
 import styles from "./Estimate.module.css";
 import EstimateForKakao from "../../components/ui/EstimateForKakao";
 import EstimateSlogan from "../../components/ui/EstimateSlogan";
-import EstimateForTel from "../../components/ui/EstimateForTel";
-import EstimateContent from "../../components/ui/EstimateContent";
 import EstimateProgress from "../../components/ui/EstimateProgress";
 import EstimateAbout from "../../components/ui/EstimateAbout";
 

@@ -18,7 +18,7 @@
 @media screen and (max-width: 1248px) {
   .slogan_container {
     width: 100%;
-    padding: 0 23px;
+    padding: 30px 20px 0;
   }
 
   .slogan_container h3 {

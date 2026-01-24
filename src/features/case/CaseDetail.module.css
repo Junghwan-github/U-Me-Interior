@@ -6,6 +6,23 @@
   flex-direction: column;
 }
 
+.interface ul {
+  display: flex;
+  flex-direction: row;
+}
+
+.interface ul li button {
+  border: none;
+  background-color: transparent;
+  font-size: 1.5rem;
+}
+
+.interface.bottom ul {
+  margin-top: 30px;
+  justify-content: center;
+  gap: 20px;
+}
+
 .title {
   text-align: center;
   /* padding: 10px 0; */
@@ -64,15 +81,23 @@
   flex-direction: row;
 }
 
-.price_header > div > span {
+.price_header > div > p {
   font-size: 0.875rem;
-  padding: 0 30px;
+  margin-left: 30px;
+  padding-right: 30px;
   border-right: 1px solid #ddd;
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
 }
 
-.price_header > div > span:last-child {
- border-right: 0px;
- padding-right: 0px;
+.price_header > div > p:last-child {
+  border-right: none;
+  padding: 0;
+}
+
+.price_header > div > p > span:first-child{
+  font-weight: 400;
 }
 
 .price_header > h2 {
@@ -106,7 +131,6 @@
 
 .price > ul > li:last-child {
   border-bottom: 0px;
-  
 }
 
 .price p {
@@ -219,4 +243,76 @@
 .content img{
 width: 100%;
 object-fit: cover;
+}
+
+@media screen and (max-width: 1248px) {
+ .content_wrap {
+  width: 100%;
+  padding: 100px 20px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+ }
+
+ .price {
+  margin: 30px 0;
+  padding: 20px;
+  border-radius: 15px 15px 0 0;
+  box-shadow: 0 0 6px 1px #00000010;
+}
+
+
+ .title {
+  font-size: 1.5rem;
+}
+
+.price_header {
+  justify-content: flex-end;
+}
+
+.price_header > h2 {
+  display: none;
+}
+
+.price_header > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.price_header > div > p {
+  font-size: 0.875rem;
+  margin-left: 15px;
+  padding-right: 15px;
+}
+
+.price > ul > li {
+  padding: 15px 0;
+  font-size: 0.875rem;
+}
+
+.total > span {
+  font-size: 1.3rem;
+}
+
+.total > span > span {
+  font-size: 1rem;
+}
+
+.info > ul > li {
+  font-size: 0.78rem;
+}
+
+.detail_info {
+  padding: 35px 0;
+}
+
+.detail_info::before {
+  width: 39%;
+}
+
+.detail_info::after {
+  transform: translate(0, -50%);
+}
+
 }

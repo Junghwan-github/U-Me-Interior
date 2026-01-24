@@ -27,7 +27,7 @@ const Footer = () => {
             <dd>
               <p>대구광역시 달서구 월배로 152 U&ME 인테리어. │ 대표이사 : 장세광</p>
               <p>연락처 : 010-4501-8729 │ 이메일 : jsk830@naver.com</p>
-              <a href="https://uandme.kr/gb5/adm/" target="_blank">관리자 로그인</a>
+              <a href="https://uandme.kr/gb5/adm/" rel="noopener noreferrer" target="_blank">관리자 로그인</a>
             </dd>
             <dd className={styles.copy}>
               <p>

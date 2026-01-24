@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback } from "react";
 import Contents from "../../components/layout/Contents";
 import Section from "../../components/layout/Section";
 import { Link } from "react-router-dom";
@@ -8,49 +8,77 @@ import { IoIosArrowDown } from "react-icons/io";
 
 const Case = () => {
   const [posts, setPosts] = useState([]);
+  const [keywords, setKeywords] = useState([]);
   const [searchSubject, setSearchSubject] = useState("");
   const [searchKeyword, setSearchKeyword] = useState("");
   const [searchPrice, setSearchPrice] = useState("");
   const [isFetching, setIsFetching] = useState(false);
+  const [page, setPage] = useState(1);
+  const [hasMore, setHasMore] = useState(true);
   const path = "case";
+  const LIMIT = 9;
 
   // ✅ 검색 기능을 위한 API 호출 함수
-  const fetchPosts = useCallback(() => {
-    setIsFetching(true);
+  const fetchPosts = useCallback(
+    (targetPage = 1, append = false) => {
+      setIsFetching(true);
 
-    let url = `https://uandme.kr/gb5/search_board_posts.php?bo_table=${path}`;
+      let url = `https://uandme.kr/gb5/search_board_posts.php?bo_table=${path}&limit=${LIMIT}&page=${targetPage}`;
 
-    if (searchSubject) url += `&query=${encodeURIComponent(searchSubject)}`;
-    if (searchKeyword) url += `&category=${encodeURIComponent(searchKeyword)}`;
-    if (searchPrice) url += `&price=${searchPrice}`;
+      if (searchSubject) url += `&query=${encodeURIComponent(searchSubject)}`;
+      if (searchKeyword) url += `&category=${encodeURIComponent(searchKeyword)}`;
+      if (searchPrice) url += `&price=${searchPrice}`;
 
-    console.log("API 호출됨:", url); // ✅ API 호출 로그 확인
+      console.log("API 호출됨:", url);
 
-    fetch(url)
-      .then((response) => response.json())
+      fetch(url)
+        .then((response) => response.json())
+        .then((data) => {
+          if (data.status === "success") {
+            const newPosts = data.data || [];
+
+            setPosts((prev) => (append ? [...prev, ...newPosts] : newPosts));
+
+            setHasMore(newPosts.length === LIMIT);
+          }
+        })
+        .catch((error) => console.error("Error fetching data:", error))
+        .finally(() => setIsFetching(false));
+    },
+    [path, searchSubject, searchKeyword, searchPrice],
+  );
+
+  const fetchKeywords = useCallback(() => {
+    fetch(`https://uandme.kr/gb5/get_keywords?bo_table=${path}`)
+      .then((res) => res.json())
       .then((data) => {
-        if (data.status === "success") {
-          setPosts(data.data || []);
-        }
+        if (data.status === "success") setKeywords(data.data || []);
       })
-      .catch((error) => console.error("Error fetching data:", error))
-      .finally(() => setIsFetching(false));
-  }, [path, searchSubject, searchKeyword, searchPrice]);
+      .catch(console.error);
+  }, [path]);
+
+  useEffect(() => {
+    fetchKeywords();
+  }, [fetchKeywords]);
 
   // ✅ 검색 조건이 변경될 때마다 API 호출
   useEffect(() => {
-    fetchPosts();
+    setPage(1);
+    setPosts([]);
+    setHasMore(true);
+    fetchPosts(1, false);
   }, [fetchPosts]);
 
-  const extractUniqueKeywords = () => {
-    const keywordsSet = new Set();
-    posts.forEach((post) => {
-      if (post.category) {
-        post.category.forEach((cat) => keywordsSet.add(cat.trim()));
-      }
-    });
-    return Array.from(keywordsSet);
+  console.log(isFetching);
+
+  const handleLoadMore = () => {
+    if (isFetching || !hasMore) return;
+    const nextPage = page + 1;
+    setPage(nextPage);
+    fetchPosts(nextPage, true);
   };
+
+  console.log("현재 page", page, posts);
 
   const renderContent = () => (
     <>
@@ -82,9 +110,16 @@ const Case = () => {
           </li>
         ))}
       </ul>
-      <button type="button" className={styles.next_page}>
-        더보기 <IoIosArrowDown />
-      </button>
+      <div className={styles.more_wrapper}>
+        <button
+          type="button"
+          className={styles.next_page}
+          onClick={handleLoadMore}
+          disabled={isFetching}
+        >
+          더보기 <IoIosArrowDown />
+        </button>
+      </div>
     </>
   );
 
@@ -92,7 +127,7 @@ const Case = () => {
     <Contents>
       <Section attr={styles.case_wrap}>
         <BoardSearch
-          keywords={extractUniqueKeywords()}
+          keywords={keywords}
           onSearch={(query) => {
             console.log("검색 실행:", query);
             setSearchSubject(query);

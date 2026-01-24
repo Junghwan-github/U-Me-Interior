@@ -12,7 +12,7 @@ const goAbout = () => {
   return (
     <div className={styles.estimate_about_container}>
       <div className={styles.inner_images}>
-        <img src="/images/factory.png" />
+        <img src="/images/factory.png" alt="견적 상담 아이콘" />
       </div>
       <div className={styles.inner_content}>
         <h2>U&ME 인테리어</h2>

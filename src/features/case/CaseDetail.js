@@ -1,13 +1,18 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "./CaseDetail.module.css";
 import { useParams } from "react-router-dom";
 import Contents from "../../components/layout/Contents";
 import Section from "../../components/layout/Section";
 import { AiOutlineInfoCircle } from "react-icons/ai";
+import { GoArrowLeft } from "react-icons/go";
+import { GoArrowRight } from "react-icons/go";
+import { GoListUnordered } from "react-icons/go";
+import { useNavigate } from "react-router-dom";
 
 const CaseDetail = () => {
-  const { id } = useParams(); 
-  const [post, setPost] = useState(null); 
+  const { id } = useParams();
+  const [post, setPost] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetch(`https://uandme.kr/gb5/get_board_detail.php?id=${id}&bo_table=case`)
@@ -15,9 +20,13 @@ const CaseDetail = () => {
         if (!response.ok) {
           throw new Error("Network response was not ok");
         }
-        return response.json(); 
+        return response.json();
       })
       .then((data) => {
+        if(data?.error) {
+          alert("존재 하지 않는 게시글입니다.");
+          navigate("/case");
+        }
         setPost(data); // 가져온 데이터를 상태에 저장
       })
       .catch((error) => {
@@ -25,19 +34,45 @@ const CaseDetail = () => {
       });
   }, [id]);
 
-  console.log(post);
+  console.log("포스트", post);
 
   if (!post) {
     return <p>Loading...</p>; // 데이터를 로드하는 동안 로딩 메시지 표시
   }
 
+  const handleGotoList = () => {
+    navigate("/case");
+  };
+
+  const handleGotoNext = () => {
+    if (post.next_id) {
+      navigate(`/case/${post.next_id}`);
+    } else {
+      alert("다음 게시글이 없습니다.");
+    }
+  };
+
+  const handleGotoPrev = () => {
+    if (post.prev_id) {
+      navigate(`/case/${post.prev_id}`);
+    } else {
+      alert("이전 게시글이 없습니다.");
+    }
+  };
+
   return (
     <Contents>
-      <Section attr={styles.nav}>
-        <div className={styles.bar}></div>
-      </Section>
       <Section attr={styles.contents}>
         <div className={styles.content_wrap}>
+          <div className={`${styles.interface} ${styles.top}`}>
+            <ul>
+              <li>
+                <button type="button" onClick={handleGotoList}>
+                  <GoListUnordered />
+                </button>
+              </li>
+            </ul>
+          </div>
           <h1 className={styles.title}>{post.title}</h1>
           <div className={styles.category}>
             {post.category.map((item, index) => (
@@ -51,15 +86,14 @@ const CaseDetail = () => {
             <div className={styles.price_header}>
               <h2>인테리어 견적서</h2>
               <div>
-                <span>
-                  시공일 <br />
-                <strong>{post.start}</strong>
-                </span>
-                <span>
-                  기간
-                  <br />
-                  <strong>{post.period} 일</strong>
-                </span>
+                <p>
+                  <span>시공일</span>
+                  <span>{post.start}</span>
+                </p>
+                <p>
+                  <span>기간</span>
+                  <span>{post.period}일</span>
+                </p>
               </div>
             </div>
             <ul>
@@ -95,7 +129,8 @@ const CaseDetail = () => {
             </div>
           </div>
           <div className={styles.detail_info}>
-          <span>Detailed information</span><p>시공 상세 정보</p>
+            <span>Detailed information</span>
+            <p>시공 상세 정보</p>
           </div>
           <div className={styles.thumbnail}>
             {post.files.length > 0 && (
@@ -109,6 +144,25 @@ const CaseDetail = () => {
             className={styles.content}
             dangerouslySetInnerHTML={{ __html: post.content }}
           />
+          <div className={`${styles.interface} ${styles.bottom}`}>
+            <ul>
+              <li>
+                <button type="button" onClick={handleGotoPrev}>
+                  <GoArrowLeft />
+                </button>
+              </li>
+              <li>
+                <button type="button" onClick={handleGotoNext}>
+                  <GoArrowRight />
+                </button>
+              </li>
+              <li>
+                <button type="button" onClick={handleGotoList}>
+                  <GoListUnordered />
+                </button>
+              </li>
+            </ul>
+          </div>
         </div>
       </Section>
     </Contents>

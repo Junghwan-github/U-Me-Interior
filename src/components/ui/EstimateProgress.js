@@ -1,11 +1,6 @@
 import styles from "./EstimateProgress.module.css";
 import ProgressCardItem from "./ProgressCardItem";
-import { BsChatSquareDots } from "react-icons/bs";
-import { BsTelephonePlus } from "react-icons/bs";
-import { CiRuler } from "react-icons/ci";
-import { CiMemoPad } from "react-icons/ci";
-import { MdOutlineRoomPreferences } from "react-icons/md";
-import { RiContractLine } from "react-icons/ri";
+
 
 
 const EstimateProgress = () => {
@@ -27,7 +22,7 @@ const EstimateProgress = () => {
           desc={"견적 및 A/S의 대한 상담을 진행 하게 됩니다"}
         >
           <div className={styles.icons}>
-            <img src="/images/QqO2GQ1UoKzE37Z-.webp" />
+            <img src="/images/QqO2GQ1UoKzE37Z-.webp" alt="견적 상담 아이콘" />
           </div>
         </ProgressCardItem>
         <ProgressCardItem
@@ -37,7 +32,7 @@ const EstimateProgress = () => {
           desc={"고객님의 요구를 반영한 맞춤 디자인을 제안합니다."}
         >
           <div className={styles.icons}>
-          <img src="/images/a4Ynggh7Gc4mgfHp.webp" />
+          <img src="/images/a4Ynggh7Gc4mgfHp.webp" alt="견적 상담 아이콘"/>
           </div>
         </ProgressCardItem>
         <ProgressCardItem
@@ -47,7 +42,7 @@ const EstimateProgress = () => {
           desc={"디자인을 조율하여 최종 확정 후, 견적서를 작성합니다."}
         >
           <div className={styles.icons}>
-            <img src="/images/YGUCSLI6jh62xp4R.webp" />
+            <img src="/images/YGUCSLI6jh62xp4R.webp" alt="견적 상담 아이콘"/>
           </div>
         </ProgressCardItem>
         <ProgressCardItem
@@ -57,7 +52,7 @@ const EstimateProgress = () => {
           desc={"계약서 작성 후 공사 계획을 안내드립니다."}
         >
           <div className={styles.icons}>
-          <img src="/images/fgdbEUGmLi0rb7tY.webp" />
+          <img src="/images/fgdbEUGmLi0rb7tY.webp" alt="견적 상담 아이콘"/>
           </div>
         </ProgressCardItem>
       </div>

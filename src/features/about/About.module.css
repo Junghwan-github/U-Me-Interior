@@ -196,12 +196,12 @@
     width: 100%;
     height: auto;
     flex-direction: column;
-    padding: 70px 23px;
+    padding: 70px 20px;
     gap: 30px;
   }
 
   .inner_images {
-    height: 500px;
+    height: 550px;
   }
 
   .inner_images img {
@@ -209,13 +209,13 @@
   }
 
   .inner_content > h2 {
-    padding: 0 23px;
+    padding: 0 20px;
     font-size: 2rem;
   }
 
   .inner_content > p {
     font-size: 1.1rem;
-    padding: 0 23px;
+    padding: 0 20px;
   }
 
   .merit_inner_title > h2 {
@@ -253,7 +253,7 @@
   }
 
   .map_container {
-    padding: 0 23px;
+    padding: 0 20px;
   }
 
   .map {
