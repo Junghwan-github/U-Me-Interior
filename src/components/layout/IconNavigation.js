@@ -21,7 +21,7 @@ const IconNavigation = ({isActive, setIsActive}) => {
       </li>
       <li className={styles.mobile_menu}>
         <button type="button" onClick={toggleHamburger} className={styles.mobile_gnb_button}>
-          <RxHamburgerMenu />
+          <RxHamburgerMenu color={"#111"} fill={"#111"} />
         </button>
       </li>
     </ul>

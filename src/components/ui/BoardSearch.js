@@ -130,7 +130,7 @@ const BoardSearch = ({ keywords, onSearch, onKeywordClick, onPriceClick, onReset
         <li>
           <button type="button" onClick={handleMobileCategory}>
             {mobileCategory}
-            <IoIosArrowDown />
+            <IoIosArrowDown color={"#111"} fill={"#111"} />
           </button>
           {isCategory && (
             <ul className={styles.mobile_category_list}>
@@ -173,6 +173,8 @@ const BoardSearch = ({ keywords, onSearch, onKeywordClick, onPriceClick, onReset
                     onReset();
                     setSearchText("");
                   }}
+                  color={"#111"}
+                  fill={"#111"}
                 />
               </button>
             </li>
@@ -195,7 +197,7 @@ const BoardSearch = ({ keywords, onSearch, onKeywordClick, onPriceClick, onReset
             )}
             <li>
               <button type="button" onClick={toggleMobileSearch}>
-                <SlMagnifier size={20} />
+                <SlMagnifier size={20} color={"#111"} fill={"#111"} />
               </button>
             </li>
           </ul>

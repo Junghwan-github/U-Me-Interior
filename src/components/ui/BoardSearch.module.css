@@ -165,6 +165,7 @@
     border-radius: 0 15px 15px 0;
     display: flex;
     align-items: center;
+    color: #111;
   }
 
   .search_content_mobile > li:nth-child(2) {
@@ -204,9 +205,6 @@
     padding: 0 20px 0 5px;
   }
 
-  .search_content_mobile > li:last-child > ul > li {
-    /* height: 22px; */
-  }
 
   .search_content_mobile > li:last-child > ul > li > button {
     border: none;
