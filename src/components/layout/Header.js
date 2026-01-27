@@ -59,7 +59,7 @@ const Header = () => {
           <div className={styles.mobile_gnb_container}>
             <div className={styles.mobile_gnb_header}>
             <button type="button" onClick={toggleHamburger} className={styles.mobile_gnb_close}>
-              <IoMdClose />
+              <IoMdClose color={"#111"} fill={"#111"} />
             </button>
             </div>
             <ul className={styles.icon_navigation}>

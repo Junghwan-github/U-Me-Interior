@@ -117,7 +117,7 @@ const Case = () => {
           onClick={handleLoadMore}
           disabled={isFetching}
         >
-          더보기 <IoIosArrowDown color={"#111"} fill={"#111"} />
+          더보기 <IoIosArrowDown />
         </button>
       </div>
     </>
